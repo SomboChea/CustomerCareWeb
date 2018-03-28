@@ -11,23 +11,47 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
     // I pushed
 });
 
 Route::get('/db', function () {
-    return DB::select("EXEC testFunc");
+    return DB::select("EXEC checkName ?",["sunlong"]);
 });
 
+Route::get('/Test',function(){
+    return view('Test');
+});
+
+Route::post('test/name','UserController@test');
+
+// Route::post('test/name',function(Request $req){
+//     echo $r
+// });
+
+
 Route::get('person', 'PersonController@getPerson');
+
+Route::prefix('/api/v1')->group(function(){
+    Route::get('/',function(){
+
+    });
+Route::prefix('/User')->group(function(){
+    Route::get('/','UserController@index');
+    Route::post('/new','UserController@insert');
+    Route::post('/update','UserController@update');
+    Route::get('/delete/{id}','UserController@delete');
+});
+});
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
         echo 'Index';
     });
     
-    Route::get('/profile', function () {
+    Route::post('/profile', function () {
         echo "Admin Profile";
     });
 
