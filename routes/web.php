@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-    // I push
+    // I pushed
 });
 
 Route::get('/db', function () {
