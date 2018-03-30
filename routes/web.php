@@ -34,21 +34,22 @@ Route::post('test/name','UserController@test');
 
 Route::get('person', 'PersonController@getPerson');
 
-Route::prefix('/api/v1')->group(function(){
+Route::prefix('/api/v1')->group(function () {
     Route::get('/',function(){
 
     });
-Route::prefix('/User')->group(function(){
-    Route::get('/','UserController@index');
-    Route::post('/new','UserController@insert');
-    Route::post('/update','UserController@update');
-    Route::get('/delete/{id}','UserController@delete');
-});
+    Route::prefix('/user')->group(function () {
+        Route::get('/','UserController@index');
+        Route::post('/new','UserController@insert');
+        Route::post('/update/{id}','UserController@update');
+        Route::get('/delete/{id}','UserController@delete');
+    });
 });
 
 Route::prefix('/admin')->group(function () {
+
     Route::get('/', function () {
-        echo 'Index';
+        return view('index');
     });
     
     Route::post('/profile', function () {
