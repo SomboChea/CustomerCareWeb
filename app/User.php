@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $table='tbl_user';
-    public $timestamps = [ "created_at" ];
+    public $timestamps = false;
+    // public $timestamps = [ "created_at" ];
     protected $fillable = [
         'name', 'email', 'password',
     ];

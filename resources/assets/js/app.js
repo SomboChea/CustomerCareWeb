@@ -6,6 +6,10 @@
  */
 
 require('./bootstrap');
+require('./detect');
+require('./jquery.blockUI');
+require('./jquery.nicescroll');
+require('./pikeadmin');
 
 window.Vue = require('vue');
 

@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
     // I pushed
 });
 
@@ -49,7 +49,7 @@ Route::prefix('/api/v1')->group(function () {
 Route::prefix('/admin')->group(function () {
 
     Route::get('/', function () {
-        return view('index');
+        return view('admin.dashboard');
     });
     
     Route::post('/profile', function () {
