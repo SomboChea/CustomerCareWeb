@@ -10,6 +10,7 @@ require('./detect');
 require('./jquery.blockUI');
 require('./jquery.nicescroll');
 require('./pikeadmin');
+require('./fullcalendar.min');
 
 window.Vue = require('vue');
 

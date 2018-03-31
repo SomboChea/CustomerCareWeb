@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "fastclick": "^1.0.6",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "fullcalendar": "^3.9.0"
     }
 }

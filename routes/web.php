@@ -51,6 +51,10 @@ Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     });
+
+    Route::get('/calendar', function () {
+        return view('admin.calendar');
+    });
     
     Route::post('/profile', function () {
         echo "Admin Profile";

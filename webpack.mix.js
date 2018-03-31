@@ -11,6 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js(['resources/assets/js/app.js'],
+mix.js(['resources/assets/js/app.js',
+        'resources/assets/js/fullcalendar.min.js'],
         'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .styles(['resources/assets/css/fullcalendar.min.css',
+            'resources/assets/css/fullcalendar_ext.css',
+            'resources/assets/css/style.css'], 'public/css/all.css');

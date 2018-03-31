@@ -23,46 +23,11 @@
 
           <li class="list-inline-item dropdown notif">
             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-              <i class="fa fa-fw fa-question-circle"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-              <!-- item-->
-              <div class="dropdown-item noti-title">
-                <h5>
-                  <small>Help and Support</small>
-                </h5>
-              </div>
-
-              <!-- item-->
-              <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
-                <p class="notify-details ml-0">
-                  <b>Do you want custom development to integrate this theme?</b>
-                  <span>Contact Us</span>
-                </p>
-              </a>
-
-              <!-- item-->
-              <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
-                <p class="notify-details ml-0">
-                  <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
-                  <span>Try Pike Admin PRO</span>
-                </p>
-              </a>
-
-              <!-- All-->
-              <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
-                <i class="fa fa-link"></i> Visit Pike Admin Website
-              </a>
-
-            </div>
-          </li>
-
-          <li class="list-inline-item dropdown notif">
-            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
               <i class="fa fa-fw fa-envelope-o"></i>
               <span class="notif-bullet"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+              
               <!-- item-->
               <div class="dropdown-item noti-title">
                 <h5>
@@ -80,24 +45,6 @@
                 </p>
               </a>
 
-              <!-- item-->
-              <a href="#" class="dropdown-item notify-item">
-                <p class="notify-details ml-0">
-                  <b>Michael Jackson</b>
-                  <span>New message received</span>
-                  <small class="text-muted">15 minutes ago</small>
-                </p>
-              </a>
-
-              <!-- item-->
-              <a href="#" class="dropdown-item notify-item">
-                <p class="notify-details ml-0">
-                  <b>Foxy Johnes</b>
-                  <span>New message received</span>
-                  <small class="text-muted">Yesterday, 13:30</small>
-                </p>
-              </a>
-
               <!-- All-->
               <a href="#" class="dropdown-item notify-item notify-all">
                 View All
@@ -112,6 +59,7 @@
               <span class="notif-bullet"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
+              
               <!-- item-->
               <div class="dropdown-item noti-title">
                 <h5>
@@ -129,30 +77,6 @@
                   <b>John Doe</b>
                   <span>User registration</span>
                   <small class="text-muted">3 minutes ago</small>
-                </p>
-              </a>
-
-              <!-- item-->
-              <a href="#" class="dropdown-item notify-item">
-                <div class="notify-icon bg-faded">
-                  <img src="assets/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
-                </div>
-                <p class="notify-details">
-                  <b>Michael Cox</b>
-                  <span>Task 2 completed</span>
-                  <small class="text-muted">12 minutes ago</small>
-                </p>
-              </a>
-
-              <!-- item-->
-              <a href="#" class="dropdown-item notify-item">
-                <div class="notify-icon bg-faded">
-                  <img src="assets/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
-                </div>
-                <p class="notify-details">
-                  <b>Michelle Dolores</b>
-                  <span>New job completed</span>
-                  <small class="text-muted">35 minutes ago</small>
                 </p>
               </a>
 
@@ -243,9 +167,6 @@
                 <li>
                   <a href="tables-basic.html">Basic Tables</a>
                 </li>
-                <li>
-                  <a href="tables-datatable.html">Data Tables</a>
-                </li>
               </ul>
             </li>
             <li class="submenu">
@@ -257,27 +178,6 @@
               <ul class="list-unstyled">
                 <li>
                   <a href="ui-alerts.html">Alerts</a>
-                </li>
-                <li>
-                  <a href="ui-buttons.html">Buttons</a>
-                </li>
-                <li>
-                  <a href="ui-cards.html">Cards</a>
-                </li>
-                <li>
-                  <a href="ui-carousel.html">Carousel</a>
-                </li>
-                <li>
-                  <a href="ui-collapse.html">Collapse</a>
-                </li>
-                <li>
-                  <a href="ui-icons.html">Icons</a>
-                </li>
-                <li>
-                  <a href="ui-modals.html">Modals</a>
-                </li>
-                <li>
-                  <a href="ui-tooltips.html">Tooltips and Popovers</a>
                 </li>
               </ul>
             </li>
@@ -291,24 +191,6 @@
                 <li>
                   <a href="forms-general.html">General Elements</a>
                 </li>
-                <li>
-                  <a href="forms-select2.html">Select2</a>
-                </li>
-                <li>
-                  <a href="forms-validation.html">Form Validation</a>
-                </li>
-                <li>
-                  <a href="forms-text-editor.html">Text Editors</a>
-                </li>
-                <li>
-                  <a href="forms-upload.html">Multiple File Upload</a>
-                </li>
-                <li>
-                  <a href="forms-datetime-picker.html">Date and Time Picker</a>
-                </li>
-                <li>
-                  <a href="forms-color-picker.html">Color Picker</a>
-                </li>
               </ul>
             </li>
             <li class="submenu">
@@ -320,24 +202,6 @@
               <ul class="list-unstyled">
                 <li>
                   <a href="star-rating.html">Star Rating</a>
-                </li>
-                <li>
-                  <a href="range-sliders.html">Range Sliders</a>
-                </li>
-                <li>
-                  <a href="tree-view.html">Tree View</a>
-                </li>
-                <li>
-                  <a href="sweetalert.html">SweetAlert</a>
-                </li>
-                <li>
-                  <a href="calendar.html">Calendar</a>
-                </li>
-                <li>
-                  <a href="gmaps.html">GMaps</a>
-                </li>
-                <li>
-                  <a href="counter-up.html">Counter-Up</a>
                 </li>
               </ul>
             </li>
@@ -352,18 +216,6 @@
                   <a href="media-fancybox.html">
                     <span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a>
                 </li>
-                <li>
-                  <a href="media-masonry.html">Masonry</a>
-                </li>
-                <li>
-                  <a href="media-lightbox.html">Lightbox</a>
-                </li>
-                <li>
-                  <a href="media-owl-carousel.html">Owl Carousel</a>
-                </li>
-                <li>
-                  <a href="media-image-magnifier.html">Image Magnifier</a>
-                </li>
               </ul>
             </li>
             <li class="submenu">
@@ -376,18 +228,6 @@
                 <li>
                   <a href="page-pricing-tables.html">Pricing Tables</a>
                 </li>
-                <li>
-                  <a target="_blank" href="page-coming-soon.html">Countdown</a>
-                </li>
-                <li>
-                  <a href="page-invoice.html">Invoice</a>
-                </li>
-                <li>
-                  <a href="page-login.html">Login / Register</a>
-                </li>
-                <li>
-                  <a href="page-blank.html">Blank Page</a>
-                </li>
               </ul>
             </li>
             <li class="submenu">
@@ -397,11 +237,6 @@
                 <span> Menu Levels </span>
               </a>
               <ul>
-                <li>
-                  <a href="#">
-                    <span>Second Level</span>
-                  </a>
-                </li>
                 <li class="submenu">
                   <a href="#">
                     <span>Third Level</span>
@@ -413,25 +248,17 @@
                         <span>Third Level Item</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <span>Third Level Item</span>
-                      </a>
-                    </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li class="submenu">
               <a class="pro" href="#">
-                <i class="fa fa-fw fa-star"></i>
-                <span> Pike Admin PRO </span>
+                <i class="fa fa-fw fa-google"></i>
+                <span> Admin Pro </span>
                 <span class="menu-arrow"></span>
               </a>
               <ul class="list-unstyled">
-                <li>
-                  <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro">Admin PRO features</a>
-                </li>
                 <li>
                   <a href="pro-settings.html">Settings</a>
                 </li>
@@ -440,21 +267,6 @@
                 </li>
                 <li>
                   <a href="pro-users.html">Users</a>
-                </li>
-                <li>
-                  <a href="pro-articles.html">Articles</a>
-                </li>
-                <li>
-                  <a href="pro-categories.html">Categories</a>
-                </li>
-                <li>
-                  <a href="pro-pages.html">Pages</a>
-                </li>
-                <li>
-                  <a href="pro-contact-messages.html">Contact Messages</a>
-                </li>
-                <li>
-                  <a href="pro-slider.html">Slider</a>
                 </li>
               </ul>
             </li>
@@ -494,22 +306,15 @@
           </div>
           <!-- end Dashboard row -->
 
-          <!-- <div class="alert alert-danger" role="alert">
-						<h4 class="alert-heading">Info!</h4>
-						<p>Do you want custom development to integrate this theme in your project? Or add new features? Contact us on <a target="_blank" href="https://www.pikeadmin.com"><b>Pike Admin Website</b></a></p>
-						<p>Or try our PRO version: <b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
-						<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
-						</div> -->
-
           <!-- Statistic row -->
           <div class="row">
 
             <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
               <div class="card-box noradius noborder bg-default">
                 <i class="fa fa-file-text-o float-right text-white"></i>
-                <h6 class="text-white text-uppercase m-b-20">Orders</h6>
+                <h6 class="text-white text-uppercase m-b-20">All Called</h6>
                 <h1 class="m-b-20 text-white counter">1,587</h1>
-                <span class="text-white">15 New Orders</span>
+                <span class="text-white">Today 15 New</span>
               </div>
             </div>
 
@@ -544,14 +349,14 @@
           <!-- end Statistic row -->
 
 
-
+          <!-- Chart JS -->
           <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
               <div class="card mb-3">
                 <div class="card-header">
                   <h3>
-                    <i class="fa fa-line-chart"></i> Items Sold Amount</h3>
+                    <i class="fa fa-line-chart"></i> Product Sold</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet
                   sollicitudin.
                 </div>
@@ -568,7 +373,7 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <h3>
-                    <i class="fa fa-bar-chart-o"></i> Colour Analytics</h3>
+                    <i class="fa fa-bar-chart-o"></i> All Mom</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet
                   sollicitudin.
                 </div>
@@ -585,7 +390,7 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <h3>
-                    <i class="fa fa-bar-chart-o"></i> Colour Analytics 2</h3>
+                    <i class="fa fa-bar-chart-o"></i> Top Sources</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet
                   sollicitudin.
                 </div>
@@ -604,11 +409,12 @@
 
           <div class="row">
 
+            <!-- Data Table -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
               <div class="card mb-3">
                 <div class="card-header">
                   <h3>
-                    <i class="fa fa-users"></i> Staff details</h3>
+                    <i class="fa fa-users"></i> Top Customers</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet
                   sollicitudin.
                 </div>
@@ -643,16 +449,17 @@
               <!-- end card-->
             </div>
 
-
+            <!-- Tasks Progress -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
               <div class="card mb-3">
                 <div class="card-header">
                   <h3>
-                    <i class="fa fa-star-o"></i> Tasks progress</h3>
+                    <i class="fa fa-phone"></i> Calling Progress</h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </div>
 
                 <div class="card-body">
+
                   <p class="font-600 m-b-5">Task 1
                     <span class="text-primary pull-right">
                       <b>95%</b>
@@ -661,18 +468,6 @@
                   <div class="progress">
                     <div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95"
                       aria-valuemin="0" aria-valuemax="95"></div>
-                  </div>
-
-                  <div class="m-b-20"></div>
-
-                  <p class="font-600 m-b-5">Task 2
-                    <span class="text-primary pull-right">
-                      <b>88%</b>
-                    </span>
-                  </p>
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88"
-                      aria-valuemin="0" aria-valuemax="88"></div>
                   </div>
 
                   <div class="m-b-20"></div>
@@ -686,19 +481,6 @@
                     <div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 78%" aria-valuenow="75"
                       aria-valuemin="0" aria-valuemax="75"></div>
                   </div>
-
-                  <div class="m-b-20"></div>
-
-                  <p class="font-600 m-b-5">Task 4
-                    <span class="text-info pull-right">
-                      <b>70%</b>
-                    </span>
-                  </p>
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 70%" aria-valuenow="70"
-                      aria-valuemin="0" aria-valuemax="70"></div>
-                  </div>
-
                   <div class="m-b-20"></div>
 
                   <p class="font-600 m-b-5">Task 5
@@ -713,18 +495,6 @@
 
                   <div class="m-b-20"></div>
 
-                  <p class="font-600 m-b-5">Task 6
-                    <span class="text-warning pull-right">
-                      <b>65%</b>
-                    </span>
-                  </p>
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-xs bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65"
-                      aria-valuemin="0" aria-valuemax="65"></div>
-                  </div>
-
-                  <div class="m-b-20"></div>
-
                   <p class="font-600 m-b-5">Task 7
                     <span class="text-danger pull-right">
                       <b>55%</b>
@@ -735,17 +505,7 @@
                       aria-valuemin="0" aria-valuemax="55"></div>
                   </div>
 
-                  <div class="m-b-20"></div>
-
-                  <p class="font-600 m-b-5">Task 8
-                    <span class="text-danger pull-right">
-                      <b>40%</b>
-                    </span>
-                  </p>
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-xs bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40"
-                      aria-valuemin="0" aria-valuemax="40"></div>
-                  </div>
+                  
                 </div>
                 <div class="card-footer small text-muted">Updated today at 11:59 PM</div>
               </div>
