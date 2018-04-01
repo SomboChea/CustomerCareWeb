@@ -36,8 +36,23 @@ Route::get('person', 'PersonController@getPerson');
 
 Route::prefix('/api/v1')->group(function () {
     Route::get('/',function(){
-
     });
+
+    Route::get('/alert', function() {
+        //
+        return DB::select("Exec CheckDatePreg 0,'day'");     
+    });
+
+    Route::get('/alert/month/{duration}', function($duration) {
+        //
+        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"month"]);     
+    });
+
+    Route::get('/alert/day/{duration}', function($duration) {
+        //
+        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"day"]);     
+    });
+    
     Route::prefix('/user')->group(function () {
         Route::get('/','UserController@index');
         Route::post('/new','UserController@insert');
