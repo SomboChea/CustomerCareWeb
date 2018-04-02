@@ -58,6 +58,9 @@ Route::prefix('/api/v1')->group(function () {
         Route::post('/new','UserController@insert');
         Route::post('/update/{id}','UserController@update');
         Route::get('/delete/{id}','UserController@delete');
+        Route::put('/update', function () {
+            return "Updated";
+        });
     });
 });
 

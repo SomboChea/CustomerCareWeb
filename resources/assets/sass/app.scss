@@ -1,6 +1,7 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,300");
 
 // Variables
 @import "variables";
@@ -8,6 +9,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~font-awesome/scss/font-awesome';
+@import '~fullcalendar/dist/fullcalendar.min';
 
 .navbar-laravel {
   background-color: #fff;

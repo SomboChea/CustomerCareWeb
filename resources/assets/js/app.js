@@ -12,6 +12,8 @@ require('./jquery.nicescroll');
 require('./pikeadmin');
 require('./fullcalendar.min');
 
+window.FastClick = require('./fastclick');
+
 window.Vue = require('vue');
 
 /**
