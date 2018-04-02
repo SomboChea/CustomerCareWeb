@@ -22,6 +22,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function getTest($at) {
+        return $at . "\n has done";
+    }
+    
     /**
      * The attributes that should be hidden for arrays.
      *
