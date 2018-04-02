@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Customer Care - @yield('title','Dashboard')</title>
-    <link rel="stylesheet" href="{!! mix('css/app.css') !!}" type="text/css" />
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ mix('css/all.css') }}" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 </head>
@@ -19,7 +19,7 @@
 
     {{-- <script src="js/modernizr.min.js" type="text/javascript"></script> --}}
     {{-- <script src="js/fastclick.js" type="text/javascript"></script> --}}
-    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     
     <!-- BEGIN Java Script for this page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
