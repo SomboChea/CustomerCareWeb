@@ -1,0 +1,13 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends Model
+{
+    //
+    protected $table="DummyTable";
+    public $timestamp=false;
+    public $primaryKey = 'firstcolumn';
+}
