@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Customer Care - @yield('title','Dashboard')</title>
+    <title>{{ env('APP_NAME') }} - @yield('title','Dashboard')</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ mix('css/admin.css') }}" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 </head>
 <body class="adminbody">
 
+    
+
     <div id="main">
+        
+        @includeIf("layouts.navbar")
+        @includeIf("layouts.menu")
 
         @yield("content")
 
     </div>
 
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ mix('js/admin.js') }}" type="text/javascript"></script>
@@ -31,6 +37,7 @@
             console.log("jQuery is Activated!");
         });
     </script>
+
     <script>
             var ctx1 = document.getElementById("lineChart").getContext('2d');
             var lineChart = new Chart(ctx1, {

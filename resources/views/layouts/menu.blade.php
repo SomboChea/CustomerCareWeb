@@ -13,21 +13,38 @@
             </a>
           </li>
           <li class="submenu">
-            <a href="charts.html">
+            <a href="#">
               <i class="fa fa-fw fa-area-chart"></i>
-              <span> Charts </span>
+              <span> Customers </span>
             </a>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="ui-alerts.html">Mom</a>
+                </li>
+                <li>
+                    <a href="ui-alerts.html">Kid</a>
+                </li>
+            </ul>
           </li>
           <li class="submenu">
             <a href="#">
               <i class="fa fa-fw fa-table"></i>
-              <span> Tables </span>
+              <span> Sources </span>
               <span class="menu-arrow"></span>
             </a>
             <ul class="list-unstyled">
-              <li>
-                <a href="tables-basic.html">Basic Tables</a>
-              </li>
+                <li>
+                    <a href="#">Hospital / Clinic</a>
+                </li>
+                <li>
+                    <a href="#">Retail</a>
+                </li>
+                <li>
+                    <a href="#">PC</a>
+                </li>
+                <li>
+                    <a href="#">Other</a>
+                </li>
             </ul>
           </li>
           <li class="submenu">
@@ -36,7 +53,7 @@
               <span> User Interface </span>
               <span class="menu-arrow"></span>
             </a>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled">  
               <li>
                 <a href="ui-alerts.html">Alerts</a>
               </li>
@@ -113,24 +130,7 @@
               </li>
             </ul>
           </li>
-          <li class="submenu">
-            <a class="pro" href="#">
-              <i class="fa fa-fw fa-google"></i>
-              <span> Admin Pro </span>
-              <span class="menu-arrow"></span>
-            </a>
-            <ul class="list-unstyled">
-              <li>
-                <a href="pro-settings.html">Settings</a>
-              </li>
-              <li>
-                <a href="pro-profile.html">My Profile</a>
-              </li>
-              <li>
-                <a href="pro-users.html">Users</a>
-              </li>
-            </ul>
-          </li>
+          
         </ul>
         <div class="clearfix"></div>
       </div>

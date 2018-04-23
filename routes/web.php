@@ -102,3 +102,7 @@ Route::prefix('/admin')->group(function () {
 
 });
 
+Route::get('login', function () {
+    return view('auth.login');
+});
+
