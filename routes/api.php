@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Name;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,7 +21,9 @@ use App\User;
 Route::get('/',function(){
     return view('api test');
 });
-
+Route::get("/name/{id}",function($id){
+    return Name::find($id)->name;
+});
 Route::prefix('auth')->group(function(){
     Route::get("/",function(){
         echo "Access forbiden!";
