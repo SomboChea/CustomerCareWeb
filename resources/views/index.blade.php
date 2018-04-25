@@ -5,6 +5,6 @@
 
 @section("content")
 
-    <h1 class="text-center">Welcome</h1>
+    <h1 class="text-center">Hello World</h1>
     
 @endsection()
