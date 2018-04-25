@@ -15,14 +15,34 @@
           <li class="submenu">
             <a href="#">
               <i class="fa fa-fw fa-area-chart"></i>
-              <span> Customers </span>
+              <span> Calling Lists </span>
+              <span class="menu-arrow"></span>
             </a>
             <ul class="list-unstyled">
                 <li>
-                    <a href="ui-alerts.html">Mom</a>
+                    <a href="#">Pregnent
+                      <span class="label radius-circle bg-primary float-right">10</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="ui-alerts.html">Kid</a>
+                    <a href="#">Step
+                        <span class="label radius-circle bg-warning float-right">15</span>
+                    </a>
+                </li>
+            </ul>
+          </li>
+          <li class="submenu">
+            <a href="#">
+              <i class="fa fa-fw fa-area-chart"></i>
+              <span> Customers </span>
+              <span class="menu-arrow"></span>
+            </a>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#">Mom</a>
+                </li>
+                <li>
+                    <a href="#">Kid</a>
                 </li>
             </ul>
           </li>
@@ -49,50 +69,16 @@
           </li>
           <li class="submenu">
             <a href="#">
-              <i class="fa fa-fw fa-tv"></i>
-              <span> User Interface </span>
-              <span class="menu-arrow"></span>
-            </a>
-            <ul class="list-unstyled">  
-              <li>
-                <a href="ui-alerts.html">Alerts</a>
-              </li>
-            </ul>
-          </li>
-          <li class="submenu">
-            <a href="#">
-              <i class="fa fa-fw fa-file-text-o"></i>
-              <span> Forms </span>
-              <span class="menu-arrow"></span>
-            </a>
-            <ul class="list-unstyled">
-              <li>
-                <a href="forms-general.html">General Elements</a>
-              </li>
-            </ul>
-          </li>
-          <li class="submenu">
-            <a href="#">
               <i class="fa fa-fw fa-th"></i>
-              <span> Plugins </span>
+              <span> Products </span>
               <span class="menu-arrow"></span>
             </a>
             <ul class="list-unstyled">
               <li>
-                <a href="star-rating.html">Star Rating</a>
+                <a href="#">Add New</a>
               </li>
-            </ul>
-          </li>
-          <li class="submenu">
-            <a href="#">
-              <i class="fa fa-fw fa-image"></i>
-              <span> Images and Galleries </span>
-              <span class="menu-arrow"></span>
-            </a>
-            <ul class="list-unstyled">
               <li>
-                <a href="media-fancybox.html">
-                  <span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a>
+                <a href="#">View All</a>
               </li>
             </ul>
           </li>
@@ -100,33 +86,62 @@
             <a href="#">
               <span class="label radius-circle bg-danger float-right">20</span>
               <i class="fa fa-fw fa-copy"></i>
-              <span> Example Pages </span>
+              <span> Reports </span>
             </a>
             <ul class="list-unstyled">
               <li>
-                <a href="page-pricing-tables.html">Pricing Tables</a>
+                <a href="#">Daily</a>
+              </li>
+              <li>
+                <a href="#">Weekly</a>
               </li>
             </ul>
           </li>
           <li class="submenu">
+              <a href="#">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span> Users </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <ul class="list-unstyled">
+                  <li>
+                      <a href="#">New user</a>
+                  </li>
+                  <li>
+                      <a href="#">View all</a>
+                  </li>
+                  <li>
+                      <a href="#">Roles</a>
+                  </li>
+              </ul>
+            </li>
+          <li class="submenu">
             <a href="#">
               <span class="label radius-circle bg-primary float-right">9</span>
               <i class="fa fa-fw fa-indent"></i>
-              <span> Menu Levels </span>
+              <span> Preferences </span>
             </a>
             <ul>
               <li class="submenu">
                 <a href="#">
-                  <span>Third Level</span>
+                  <span>Alerts</span>
                   <span class="menu-arrow"></span>
                 </a>
                 <ul style="">
                   <li>
                     <a href="#">
-                      <span>Third Level Item</span>
+                      <span>Pregnent</span>
                     </a>
                   </li>
+                  <li>
+                      <a href="#">
+                        <span>Step</span>
+                      </a>
+                    </li>
                 </ul>
+              </li>
+              <li>
+                  <a href="#">Web Setting</a>
               </li>
             </ul>
           </li>
