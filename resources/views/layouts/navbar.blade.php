@@ -52,7 +52,7 @@
             <i class="fa fa-fw fa-bell-o"></i>
             <span class="notif-bullet"></span>
           </a>
-          <div class="alert-navbar dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
+          <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
             
             <!-- item-->
             <div class="dropdown-item noti-title">
@@ -63,36 +63,16 @@
             </div>
 
             <!-- item-->
-            <script>
-              $(document).ready(function(){
-                $.ajax({
-                  url:"/api/v1/alert",
-                  method:"GET",
-                  success:function(data){
-                    data.forEach(function(element,index,arr){
-                      console.log(element);
-                    
-                    var ht='<a href="#" class="dropdown-item notify-item"><div class="notify-icon bg-faded"><img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div><p class="notify-details"><b>John Doe</b><span>johndoe</span> <small class="text-muted">3 minutes ago</small></p></a>';
-                    $(".alert-navbar").append(ht);
-                    })
-                }
-              });
-            });
-            </script></script>
             <a href="#" class="dropdown-item notify-item">
-                <div class="notify-icon bg-faded">
-                  <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
-                </div>
-                <p class="notify-details">
-                  <b>John Doe</b>
-                  <span><script>document.write(element);</script></span>
-                  <small class="text-muted">3 minutes ago</small>
-                </p>
-              </a>
-            <script>
-            
-       
-           
+              <div class="notify-icon bg-faded">
+                <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
+              </div>
+              <p class="notify-details">
+                <b>John Doe</b>
+                <span>User registration</span>
+                <small class="text-muted">3 minutes ago</small>
+              </p>
+            </a>
 
             <!-- All-->
             <a href="#" class="dropdown-item notify-item notify-all">
