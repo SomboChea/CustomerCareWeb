@@ -9,7 +9,7 @@
           <li class="submenu">
             <a class="active" href="index.html">
               <i class="fa fa-fw fa-bars"></i>
-              <span> Dashboard </span>
+              <span> Calling Lists </span>
             </a>
           </li>
           <li class="submenu">
