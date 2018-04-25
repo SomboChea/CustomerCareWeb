@@ -15,7 +15,8 @@ use App\User;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-   return view('index');
+//    return view('index');
+return User::all();
    //return redirect()->route('TestForm');
     // I pushed
 });
@@ -39,7 +40,7 @@ Route::post('test/name','UserController@test');
 Route::get('person', 'PersonController@getPerson');
 
 
-Route::middleware(['test'])->group(function(){
+Route::middleware([])->group(function(){
     Route::prefix('/api/v1')->group(function () {
         Route::get('/',function(){
             return view('test');

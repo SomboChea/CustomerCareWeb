@@ -16,7 +16,7 @@ class testmiddleware
     public function handle($request, Closure $next)
     {
         // echo "middel";
-        return redirect('');
+        return $next($request);
         //return $next($request);
     }
 }
