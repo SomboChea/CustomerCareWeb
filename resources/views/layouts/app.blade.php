@@ -27,11 +27,6 @@
 
     </div>
 
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> e0b132ff2a81033749a4df56e12fe8d1b722881b
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
     
@@ -40,10 +35,6 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e0b132ff2a81033749a4df56e12fe8d1b722881b
     <script>
         $(document).ready(function() {
             console.log("jQuery is Activated!");

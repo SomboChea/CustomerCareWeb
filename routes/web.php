@@ -20,9 +20,7 @@ Route::get('/', function () {
     // I pushed
 });
 
-Route::get('/db', function () {
-    return DB::select("EXEC checkName ?",["sunlong"]);
-});
+
 
 Route::get('/Test',function(){
     return view('tests.welcome');
@@ -48,6 +46,10 @@ Route::prefix('/admin')->group(function () {
         return view('admin.calendar');
     });
     
+    Route::get('alert',function(){
+        return view('admin.alert.all');
+    });
+
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
             return view('admin.call.all');

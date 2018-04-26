@@ -19,12 +19,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/name/{mom_id}',function($id){
-    $name_id=Mom::find($id)->name_id;
-    return Name::find($name_id)->name;
-    // return Name::all();
+Route::get('/db', function () {
+    return DB::select("EXEC checkName ?",["sunlong"]);
 });
+
+Route::prefix('/name')->group(function(){
+    Route::get('/',function(){
+        return Name::all();
+   });
+   Route::get('/{name_id}',function($id){
+    return Name::find($id);
+   })->where('name_id','[0-9]+');
+
+   Route::get('/{name}',function($name){
+    return DB::select("EXEC checkName ?",[$name]);
+   })->where('name','[a-zA-Z]+');
+});
+
 Route::prefix('auth')->group(function(){
     Route::get("/",function(){
         echo "Access forbiden!";
