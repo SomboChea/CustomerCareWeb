@@ -1,6 +1,9 @@
+@extends('layouts.content')
+@section('title', 'New Source')
+@section('block-content')
 <div class="card mb-3">
     <div class="card-header">
-        <h3><i class="fa fa-check-square-o"></i> Sources </h3>
+        <h3><i class="fa fa-check-square-o"></i> Fill all required </h3>
     </div>
         
     <div class="card-body">
@@ -53,3 +56,4 @@
         
     </div>							
 </div>
+@endsection()

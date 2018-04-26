@@ -53,12 +53,17 @@ Route::prefix('/admin')->group(function () {
             return view('admin.call.all');
         });
 
+        Route::get('/{id}', function ($id) {
+            return view('admin.call.all',['id'=>$id]);
+        })->name('admin.call');
+
+
         Route::get('/{type}/{name?}', function ($type, $name=null) {
             if(empty($name))
                 return view('admin.call.view', ['type'=>$type]);
             else
             return view('admin.call.queue', ['type'=>$type, 'name'=>$name]);
-        });
+        })->name('call.name');
     });
 
     Route::prefix('/users')->group(function () {
@@ -77,7 +82,7 @@ Route::prefix('/admin')->group(function () {
         });
 
         Route::get('/new', function () {
-
+            return view('admin.sources.new');
         });
 
         Route::get('/{type}/{name}', function ($type, $name) {
