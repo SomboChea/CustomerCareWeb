@@ -3,8 +3,8 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-      <a href="admin" class="logo">
-        <img alt="Logo" src="{{ env('APP_STATIC_LOGO') }}" />
+      <a href="{{ route('dashboard') }}" class="logo">
+        <img alt="Logo" src="{{ asset(env('APP_STATIC_LOGO')) }}" />
         <span>CC DEMO</span>
       </a>
     </div>
