@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\User;
 use App\Name;
+use App\Mom;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,13 +18,18 @@ use App\Name;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get("/name/{id}",function($id){
-    return Name::find($id)->name;
+
+
+Route::get('/name/{mom_id}',function($id){
+    $name_id=Mom::find($id)->name_id;
+    return Name::find($name_id)->name;
+    // return Name::all();
 });
 Route::prefix('auth')->group(function(){
     Route::get("/",function(){
         echo "Access forbiden!";
     });
+    
     
     Route::post('/login',function(Request $req){
         User::where('username',$req->username)->where('password',$req->password);

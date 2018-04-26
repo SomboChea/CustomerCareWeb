@@ -47,7 +47,7 @@
           </div>
         </li>
 
-        <li class="list-inline-item dropdown notif">
+        <li class=" list-inline-item dropdown notif">
           <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
             <i class="fa fa-fw fa-bell-o"></i>
             <span class="notif-bullet"></span>
@@ -62,17 +62,36 @@
               </h5>
             </div>
 
+       
+
+
             <!-- item-->
-            <a href="#" class="dropdown-item notify-item">
-              <div class="notify-icon bg-faded">
-                <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
-              </div>
-              <p class="notify-details">
-                <b>John Doe</b>
-                <span>User registration</span>
-                <small class="text-muted">3 minutes ago</small>
-              </p>
-            </a>
+            <script>
+            
+             $.ajax({
+                  url:"api/alert",
+                  method:"Get",
+                  success:function(data){
+                    data.forEach(function(element,index,arr){
+                      
+                      $.get("/api/name/"+element.mom_id,function(name){
+                        var itm= '<a href="#" class="dropdown-item notify-item">\
+                            <div class="notify-icon bg-faded">\
+                              <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div>\
+                            <p class="notify-details">\
+                              <b>'+name+'</b>\
+                              <span>User registration</span>\
+                              <small class="text-muted">'+element.created_date+'</small>\
+                            </p>\
+                          </a>';
+                        $(".alert_navbar").append(itm);
+                      })
+                      
+                    });
+                  }
+                });
+            
+              </script>
 
             <!-- All-->
             <a href="#" class="dropdown-item notify-item notify-all">

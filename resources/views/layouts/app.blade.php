@@ -17,9 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="{{asset('js/fullcalendar.min.js')}}"></script>
+    {{-- <script src="{{asset('js/fullcalendar.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/fullcalendar.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/fullcalendar.print.min.css')}}.css">
+    <link rel="stylesheet" href="{{asset('css/fullcalendar.print.min.css')}}.css"> --}}
    
 
 </head>
@@ -45,7 +45,7 @@
     </script>
 
 
-    
+   
     
 </body>
 </html>
