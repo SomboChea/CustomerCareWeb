@@ -62,26 +62,25 @@
               </h5>
             </div>
 
-       <span class="alert_navbar"></span>
+            <span class="alert_navbar"></span>
 
 
             <!-- item-->
             <script>
-            
+       
              $.ajax({
-                  url:"api/alert/month/-3",
+                  url:"{{ route('alert.days', ['duration'=>7]) }}",
                   method:"Get",
                   success:function(data){
                     var count=0;
                     data.forEach(function(element,index,arr){
-                      
-                      $.get("/api/name/"+element.mom_id,function(name){
+                      //console.log('{{$api_path}}');
+                      $.get("{{$api_path}}/name/"+element.mom_id,function(name){
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
                               <b>'+name+'</b>\
-                              <span>Tel : '+element.tel_1+'  ' +element.tel_2 +'</span>\
                               <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
                             </p>\
                           </a>';
@@ -91,8 +90,9 @@
                       })
                       
                     });
+                    console.log(count);
                     if(count==0){
-                      $(".alert_navbar").append("<p class='text-center'>No Alert</p>");
+                      $(".alert_navbar").html("<p class='text-center'>No Alert</p>");
                     }
                   }
                 });

@@ -18,7 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
+<?php
+    $api_path=env('APP_API_PATH').env('APP_API_VER');
+    ?>
 </head>
 <body class="adminbody">
 

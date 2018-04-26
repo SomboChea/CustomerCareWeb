@@ -51,7 +51,7 @@ Route::prefix('/alert')->group(function(){
     Route::get('/day/{duration}', function($duration) {
         //
         return DB::select("Exec CheckDatePreg ? , ?", [$duration,"day"]);     
-    });
+    })->name('alert.days');
 });
 
 Route::prefix('/user')->group(function () {
