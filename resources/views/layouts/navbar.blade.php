@@ -58,20 +58,21 @@
             <div class="dropdown-item noti-title">
               <h5>
                 <small>
-                  <span class="label label-danger pull-xs-right">5</span>Allerts</small>
+                  <span class="alert_count label label-danger pull-xs-right">5</span>Allerts</small>
               </h5>
             </div>
 
-       
+       <span class="alert_navbar"></span>
 
 
             <!-- item-->
             <script>
             
              $.ajax({
-                  url:"api/alert",
+                  url:"api/alert/month/-3",
                   method:"Get",
                   success:function(data){
+                    var count=0;
                     data.forEach(function(element,index,arr){
                       
                       $.get("/api/name/"+element.mom_id,function(name){
@@ -80,21 +81,26 @@
                               <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
                               <b>'+name+'</b>\
-                              <span>User registration</span>\
-                              <small class="text-muted">'+element.created_date+'</small>\
+                              <span>Tel : '+element.tel_1+'  ' +element.tel_2 +'</span>\
+                              <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
                             </p>\
                           </a>';
+                          count++;
                         $(".alert_navbar").append(itm);
+                        $(".alert_count").text(count);
                       })
                       
                     });
+                    if(count==0){
+                      $(".alert_navbar").append("<p class='text-center'>No Alert</p>");
+                    }
                   }
                 });
             
               </script>
 
             <!-- All-->
-            <a href="#" class="dropdown-item notify-item notify-all">
+            <a href="" class="dropdown-item notify-item notify-all">
               View All Allerts
             </a>
 
