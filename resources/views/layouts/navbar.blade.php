@@ -110,14 +110,14 @@
 
         <li class="list-inline-item dropdown notif">
           <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-            <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+            <img src="{{asset('assets/images/avatars/admin.png')}}" alt="Profile image" class="avatar-rounded">
           </a>
           <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
             <!-- item-->
             <div class="dropdown-item noti-title">
               <h5 class="text-overflow">
                 <small>Hello, admin</small>
-              </h5>
+              </h5> 
             </div>
 
             <!-- item-->
