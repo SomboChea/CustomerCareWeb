@@ -34,6 +34,11 @@ Route::prefix('/name')->group(function(){
    Route::get('/{name}',function($name){
     return DB::select("EXEC checkName ?",[$name]);
    })->where('name','[a-zA-Z]+');
+
+   Route::get('/search/{name}',function($name){
+        return Name::where('name','LIKE',"%$name%")->get();
+});
+   
 });
 
 Route::prefix('auth')->group(function(){

@@ -78,7 +78,7 @@
                       
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
-                              <img src="assets/images/avatars/admin.jng" alt="img" class="rounded-circle img-fluid"></div>\
+                              <img src="assets/images/avatars/admin.jpg" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
                               <b>'+element.name+'</b>\
                               <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\

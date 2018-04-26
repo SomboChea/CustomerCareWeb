@@ -46,8 +46,8 @@ Route::prefix('/admin')->group(function () {
         return view('admin.calendar');
     });
     
-    Route::get('alert',function(){
-        return view('admin.alert.all');
+    Route::get('test',function(){
+        return view('test');
     });
 
     Route::prefix('/call')->group(function () {
