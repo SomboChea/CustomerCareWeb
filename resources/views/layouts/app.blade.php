@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
     {{-- <?php
         $api_path=asset(env('APP_API_PATH').env('APP_API_VER'));
     ?> --}}
@@ -27,11 +30,6 @@
 
     </div>
 
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> e0b132ff2a81033749a4df56e12fe8d1b722881b
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
     
@@ -40,10 +38,6 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e0b132ff2a81033749a4df56e12fe8d1b722881b
     <script>
         $(document).ready(function() {
             console.log("jQuery is Activated!");
@@ -147,7 +141,10 @@
             });
         </script>
         <!-- END Java Script for this page -->
-    
+        
+        @script('selectOwner')
+
+        @endscript()
     
 </body>
 </html>

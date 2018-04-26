@@ -11,21 +11,27 @@
         <form autocomplete="off" action="#">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" autocomplete="off">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name" autocomplete="off">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" autocomplete="off">
+              <label for="ownername">Owner Name</label>
+              <select class="js-example-basic-single" name="ownername" id="ownername">
+                  <option value="AL">Alabama</option>
+                    
+                  <option value="WY">Wyoming</option>
+                </select>
             </div>
           </div>
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="tel1">Tel Line 1</label>
+              <input type="text" class="form-control" id="tel1" placeholder="076 999 5149">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tel2">Tel Line 2</label>
+              <input type="text" class="form-control" id="tel2" placeholder="012 999 999">
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -56,4 +62,5 @@
         
     </div>							
 </div>
+
 @endsection()

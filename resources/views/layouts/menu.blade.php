@@ -14,18 +14,28 @@
         </li>
         <li class="submenu">
           <a href="#">
-            <i class="fa fa-fw fa-area-chart"></i>
+            <i class="fa fa-fw fa-phone"></i>
             <span> Calling Lists </span>
             <span class="menu-arrow"></span>
           </a>
           <ul class="list-unstyled">
               <li>
-                  <a href="#">Pregnent
+                  <a href="{{ route('admin.call.all') }}">All
+                    <span class="label radius-circle bg-danger float-right">30</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="{{ route('admin.call.name',['type'=>'new']) }}">New
+                    <span class="label radius-circle bg-danger float-right">5</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="{{ route('admin.call.name',['type'=>'pregnent']) }}">Pregnent
                     <span class="label radius-circle bg-primary float-right">10</span>
                   </a>
               </li>
               <li>
-                  <a href="#">Step
+                  <a href="{{ route('admin.call.name',['type'=>'step']) }}">Step
                       <span class="label radius-circle bg-warning float-right">15</span>
                   </a>
               </li>
@@ -33,16 +43,19 @@
         </li>
         <li class="submenu">
           <a href="#">
-            <i class="fa fa-fw fa-area-chart"></i>
+            <i class="fa fa-fw fa-users"></i>
             <span> Customers </span>
             <span class="menu-arrow"></span>
           </a>
           <ul class="list-unstyled">
               <li>
-                  <a href="#">Mom</a>
+                  <a href="{{ route('admin.customers.new') }}">New</a>
               </li>
               <li>
-                  <a href="#">Kid</a>
+                  <a href="{{ route('admin.customers.view', ['type'=>'mom']) }}">Mom</a>
+              </li>
+              <li>
+                  <a href="{{ route('admin.customers.view', ['type'=>'kid']) }}">Kid</a>
               </li>
           </ul>
         </li>
@@ -54,16 +67,19 @@
           </a>
           <ul class="list-unstyled">
               <li>
-                  <a href="#">Hospital / Clinic</a>
+                  <a href="{{ route('admin.sources.new') }}">New</a>
               </li>
               <li>
-                  <a href="#">Retail</a>
+                  <a href="{{ route('admin.sources.profile',['type'=>'hcp']) }}">Hospital / Clinic</a>
               </li>
               <li>
-                  <a href="#">PC</a>
+                  <a href="{{ route('admin.sources.profile',['type'=>'retail']) }}">Retail</a>
               </li>
               <li>
-                  <a href="#">Other</a>
+                  <a href="{{ route('admin.sources.profile',['type'=>'pc']) }}">PC</a>
+              </li>
+              <li>
+                  <a href="{{ route('admin.sources.profile',['type'=>'other']) }}">Other</a>
               </li>
           </ul>
         </li>
@@ -75,10 +91,10 @@
           </a>
           <ul class="list-unstyled">
             <li>
-              <a href="#">Add New</a>
+              <a href="{{ route('admin.product.new') }}">Add New</a>
             </li>
             <li>
-              <a href="#">View All</a>
+              <a href="{{ route('admin.product.view') }}">View All</a>
             </li>
           </ul>
         </li>
@@ -99,19 +115,19 @@
         </li>
         <li class="submenu">
             <a href="#">
-              <i class="fa fa-fw fa-area-chart"></i>
+              <i class="fa fa-fw fa-user"></i>
               <span> Users </span>
               <span class="menu-arrow"></span>
             </a>
             <ul class="list-unstyled">
                 <li>
-                    <a href="#">New user</a>
+                    <a href="{{ route('admin.users.new') }}">New user</a>
                 </li>
                 <li>
-                    <a href="#">View all</a>
+                    <a href="{{ route('admin.users.view') }}">View all</a>
                 </li>
                 <li>
-                    <a href="#">Roles</a>
+                    <a href="{{ route('admin.users.roles') }}">Roles</a>
                 </li>
             </ul>
           </li>

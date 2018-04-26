@@ -15,7 +15,10 @@
  Date: 26/04/2018 11:30:41
 */
 
-
+CREATE DATABASE TelMarketing;
+GO
+USE TelMarketing;
+GO
 -- ----------------------------
 -- Table structure for sysdiagrams
 -- ----------------------------
