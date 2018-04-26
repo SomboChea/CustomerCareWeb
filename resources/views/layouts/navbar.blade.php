@@ -69,7 +69,7 @@
             <script>
        
              $.ajax({
-                  url:"{{ route('alert.days', ['duration'=>100]) }}",
+                  url:"{{ route('alert.days', ['duration'=>-7]) }}",
                   method:"Get",
                   success:function(data){
                     var count=0;
@@ -78,14 +78,14 @@
                       
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
-                              <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div>\
+                              <img src="assets/images/avatars/admin.jng" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
                               <b>'+element.name+'</b>\
                               <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
                             </p>\
                           </a>';
                           count++;
-                          console.log(data);
+                      
                         $(".alert_navbar").append(itm);
                         $(".alert_count").text(count);
                    
