@@ -42,12 +42,25 @@ Route::prefix('/admin')->group(function () {
 
     Route::get('/', function () {
         return view('admin.dashboard');
-    });
+    })->name('dashboard');
 
     Route::get('/calendar', function () {
         return view('admin.calendar');
     });
     
+    Route::prefix('/call')->group(function () {
+        Route::get('/', function () {
+            return view('admin.call.all');
+        });
+
+        Route::get('/{type}/{name?}', function ($type, $name=null) {
+            if(empty($name))
+                return view('admin.call.view', ['type'=>$type]);
+            else
+            return view('admin.call.queue', ['type'=>$type, 'name'=>$name]);
+        });
+    });
+
     Route::prefix('/users')->group(function () {
         Route::get('/', function () {
             return view("admin.users.view");
@@ -56,6 +69,21 @@ Route::prefix('/admin')->group(function () {
         Route::get('/new', function () {
             return view("admin.users.new");
         });
+    });
+
+    Route::prefix('/sources')->group(function () {
+        Route::get('/', function () {
+            return view('admin.sources.view');
+        });
+
+        Route::get('/new', function () {
+
+        });
+
+        Route::get('/{type}/{name}', function ($type, $name) {
+            return view('admin.sources.profile', ['type'=>$type,'name'=>$name]);
+        });
+
     });
 
     Route::post('/profile', function () {
