@@ -69,25 +69,26 @@
             <script>
        
              $.ajax({
-                  url:"{{ route('alert.days', ['duration'=>7]) }}",
+                  url:"{{ route('alert.days', ['duration'=>100]) }}",
                   method:"Get",
                   success:function(data){
                     var count=0;
                     data.forEach(function(element,index,arr){
-                      //console.log('{{$api_path}}');
-                      $.get("{{$api_path}}/name/"+element.mom_id,function(name){
+                      
+                      
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
-                              <b>'+name+'</b>\
+                              <b>'+element.name+'</b>\
                               <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
                             </p>\
                           </a>';
                           count++;
+                          console.log(data);
                         $(".alert_navbar").append(itm);
                         $(".alert_count").text(count);
-                      })
+                   
                       
                     });
                     console.log(count);
