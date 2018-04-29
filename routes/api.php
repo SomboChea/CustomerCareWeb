@@ -19,8 +19,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/db', function () {
-    return DB::select("EXEC checkName ?",["sunlong"]);
+Route::prefix('/db')->group(function(){
+    Route::get('/', function () {
+        return DB::select("EXEC checkName ?",["sunlong"]);
+    });
+    Route::get('calllist',function(){
+        return DB::select("Select * from ViewAllCall");
+    });
+
+    Route::get('{table}/page/{num}',function($table,$id){
+        return DB::table($table)->skip(($id-1)*50)->take(50)->get();
+    });
+
+    Route::get('column/{table}',function($table){
+        return Schema::getcolumnlisting($table);
+    });
+    
 });
 
 Route::prefix('/name')->group(function(){

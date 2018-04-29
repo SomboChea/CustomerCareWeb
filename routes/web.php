@@ -47,12 +47,12 @@ Route::prefix('/admin')->group(function () {
     });
     
     Route::get('test',function(){
-        return view('test');
+        return view('test',['result'=>User::all()]);
     });
 
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
-            return view('admin.call.all');
+            return view('admin.default.all',['dbtable'=>'viewAllCall']);
         })->name('admin.call.all');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {
@@ -63,6 +63,7 @@ Route::prefix('/admin')->group(function () {
         })->name('admin.call.name');
     });
 
+    
     Route::prefix('/customers')->group(function () {
         Route::get('/', function () {
             return view('admin.customers.index');

@@ -52,7 +52,7 @@
             <i class="fa fa-fw fa-bell-o"></i>
             <span class="notif-bullet"></span>
           </a>
-          <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
+          <div class=" dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
             
             <!-- item-->
             <div class="dropdown-item noti-title">
@@ -73,9 +73,10 @@
                   method:"Get",
                   success:function(data){
                     var count=0;
-                    data.forEach(function(element,index,arr){
+                    //data.forEach(function(element,index,arr){
                       
-                      
+                      for(var i=0;i<5;i++){
+                        var element=data[i];
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/admin.jpg" alt="img" class="rounded-circle img-fluid"></div>\
@@ -90,7 +91,7 @@
                         $(".alert_count").text(count);
                    
                       
-                    });
+                    };
                     console.log(count);
                     if(count==0){
                       $(".alert_navbar").html("<p class='text-center'>No Alert</p>");
