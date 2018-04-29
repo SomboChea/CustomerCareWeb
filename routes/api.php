@@ -93,3 +93,7 @@ Route::prefix('/user')->group(function () {
         return "Updated";
     });
 });
+
+Route::prefix('/sources')->group(function () {
+    Route::post('/new', 'ReferController@store')->name('api.sources.save');
+});

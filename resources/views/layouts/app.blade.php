@@ -10,12 +10,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> --}}
+    
+    
 
-    {{-- <?php
+    <?php
         $api_path=asset(env('APP_API_PATH').env('APP_API_VER'));
-    ?> --}}
+    ?>
 </head>
 <body class="adminbody">
 
@@ -142,9 +144,7 @@
         </script>
         <!-- END Java Script for this page -->
         
-        @script('selectOwner')
-
-        @endscript()
-    
+        
+        @stack('select2')
 </body>
 </html>
