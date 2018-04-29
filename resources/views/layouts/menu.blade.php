@@ -7,7 +7,7 @@
     <div id="sidebar-menu">
       <ul>
         <li class="submenu">
-          <a class="active" href="index.html">
+        <a class="active" href="{{ route('dashboard') }}">
             <i class="fa fa-fw fa-bars"></i>
             <span> Dashboard </span>
           </a>
