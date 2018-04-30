@@ -53,7 +53,7 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
-            $url="route('alert.days', ['duration'=>0])" ;
+            $url=route('api.db.select', ['stat'=>'select * from viewAllCall Where call_status=0']) ;
             $modal='admin.default.callmodal';
             $hidden=array('table');
             return view('admin.default.all',['url'=>$url,'modal'=>$modal,'hidden'=>json_encode($hidden)]);

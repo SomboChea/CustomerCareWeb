@@ -1,0 +1,28 @@
+SELECT
+	p.mom_id,
+	name,
+	convert(date,p.created_date) as Call_Date,
+	p.call_status ,
+	tel_1,
+	tel_2,
+	why,
+	'tbl_pregnant' AS "table" 
+FROM
+	dbo.tbl_pregnent p
+	inner join tbl_mom mum on p.mom_id=mum.id
+	inner join tbl_name na on mum.name_id=na.id
+	UNION
+SELECT
+	mom_id,
+	name,
+	format(m.created_date,'yyyy/MM/dd hh:mm'),
+	m.call_status ,
+	tel_1,
+	tel_2,
+	why,
+	'tbl_mdata'  as "table"
+FROM
+	dbo.tbl_mdata m
+	INNER JOIN tbl_kid k ON m.kid_id= k.id
+	inner join tbl_mom mom on k.mom_id=mom.id
+	inner join tbl_name na on mom.name_id=na.id;;

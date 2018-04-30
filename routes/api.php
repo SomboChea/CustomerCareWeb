@@ -23,9 +23,10 @@ Route::prefix('/db')->group(function(){
     Route::get('/', function () {
         return DB::select("EXEC checkName ?",["sunlong"]);
     });
-    Route::get('calllist',function(){
-        return DB::select("Select * from ViewAllCall");
-    });
+
+    Route::get('/select/{statement}',function($stat){
+        return DB::select($stat);
+    })->name('api.db.select');
 
     Route::get('/{table}',function($table){
         return DB::table($table)->get();
@@ -41,6 +42,8 @@ Route::prefix('/name')->group(function(){
     Route::get('/',function(){
         return Name::all();
    });
+
+   
    Route::get('/{name_id}',function($id){
     return Name::find($id);
    })->where('name_id','[0-9]+');

@@ -30,7 +30,7 @@
     
 
     $.ajax({      
-        url:'<?= $url ?>',
+        url:'{!! $url !!}',
         method:"GET",
         success:function(data){
  
