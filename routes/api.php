@@ -27,8 +27,8 @@ Route::prefix('/db')->group(function(){
         return DB::select("Select * from ViewAllCall");
     });
 
-    Route::get('{table}/page/{num}',function($table,$id){
-        return DB::table($table)->skip(($id-1)*50)->take(50)->get();
+    Route::get('/{table}',function($table){
+        return DB::table($table)->get();
     });
 
     Route::get('column/{table}',function($table){

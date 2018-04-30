@@ -1,10 +1,9 @@
 
 @extends('layouts.content')
 
-@section('title','Alert')
+ @include("admin.default.callmodal") 
 @section('block-content')
-
-
+ {{--  Modal start here  --}}
 
 <div class="row">
   <div class="col-md-12">
@@ -23,16 +22,19 @@
 </div>
 </div>
 
+@yield('test')
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
 <script>    
+    
+
     $.ajax({      
-        url:"{{asset('api/v1')}}/db/{{$dbtable}}/page/1",
+        url:'<?= $url ?>',
         method:"GET",
         success:function(data){
  
-             var hidden=['table','mom_id'];
+             var hidden=<?= $hidden ?>;
  
  
             var Cols=Object.keys(data[0]);
@@ -43,8 +45,8 @@
                  $(".gridheader").append(colheader);
             })
           
-            data.forEach(function(e){
-                var item="<tr>";
+            data.forEach(function(e,index){
+                var item="<tr data-index='"+index+"' style='cursor:pointer'>";
                 Cols.forEach(function(col){
                  if(hidden.includes(col))
                  return;
@@ -54,32 +56,22 @@
                 $('.gridbody').append(item);
             })
             $("#example").DataTable();
-            
+            $(".gridbody").find('tr').hover(function(){
+              $(this).css('background','blue').css('color','white');
+            }).mouseleave(function(){
+              $(this).removeAttr('style').css('cursor','pointer');
+            }).click(function(e){
+               var element=data[$(this).data('index')];
+              @yield('modaljs')
+            })
+       
         }
-    })
+    });
+
+  
  </script>
 
- <button data-target="#modalsimple" data-backdrop="static" data-toggle="modal" tyoe="button">modal</button>
- <div class="modal fade" id="modalsimple" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script>
+ <button hidden="hidden" id="showmodal" data-target="#infomodal" data-backdrop="static" data-toggle="modal" tyoe="button">modal</button>
 
-  </script>
+   @yield('modal')
 @endsection

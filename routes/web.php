@@ -47,12 +47,16 @@ Route::prefix('/admin')->group(function () {
     });
     
     Route::get('test',function(){
+        
         return view('test',['result'=>User::all()]);
     });
 
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
-            return view('admin.default.all',['dbtable'=>'viewAllCall']);
+            $url="route('alert.days', ['duration'=>0])" ;
+            $modal='admin.default.callmodal';
+            $hidden=array('table');
+            return view('admin.default.all',['url'=>$url,'modal'=>$modal,'hidden'=>json_encode($hidden)]);
         })->name('admin.call.all');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {

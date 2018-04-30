@@ -55,21 +55,21 @@
           <div class=" dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
             
             <!-- item-->
-            <div class="dropdown-item noti-title">
+            <div class="alert-first dropdown-item noti-title">
               <h5>
                 <small>
                   <span class="alert_count label label-danger pull-xs-right">5</span>Allerts</small>
               </h5>
             </div>
 
-            <span class="alert_navbar"></span>
+        
 
 
             <!-- item-->
             <script>
        
              $.ajax({
-                  url:"{{ route('alert.days', ['duration'=>-7]) }}",
+                  url:"{{ route('alert.days', ['duration'=>0]) }}",
                   method:"Get",
                   success:function(data){
                     var count=0;
@@ -87,14 +87,15 @@
                           </a>';
                           count++;
                       
-                        $(".alert_navbar").append(itm);
+                        $(itm).insertAfter(".alert-first");
+                        //$(".alert_navbar").append(itm);
                         $(".alert_count").text(count);
                    
                       
                     };
                     console.log(count);
                     if(count==0){
-                      $(".alert_navbar").html("<p class='text-center'>No Alert</p>");
+                      $("<p class='text-center'>No Alert</p>").insertAfter(".alert-first");;
                     }
                   }
                 });
@@ -102,7 +103,7 @@
               </script>
 
             <!-- All-->
-            <a href="" class="dropdown-item notify-item notify-all">
+            <a href="" class="text-center dropdown-item notify-item notify-all">
               View All Allerts
             </a>
 
