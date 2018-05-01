@@ -12,7 +12,7 @@
  Target Server Version : 12002000
  File Encoding         : 65001
 
- Date: 01/05/2018 19:57:36
+ Date: 01/05/2018 20:11:04
 */
 
 
@@ -579,6 +579,17 @@ INSERT INTO [dbo].[tbl_user] ([id], [fullname_id], [username], [password], [crea
 GO
 
 SET IDENTITY_INSERT [dbo].[tbl_user] OFF
+GO
+
+
+-- ----------------------------
+-- View structure for viewAlert
+-- ----------------------------
+IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[viewAlert]') AND type IN ('V'))
+	DROP VIEW [dbo].[viewAlert]
+GO
+
+CREATE VIEW [dbo].[viewAlert] AS select * from viewLastCall where dbo.CheckAlert(Expect_Call_Date,Status)=1
 GO
 
 
@@ -1525,36 +1536,24 @@ GO
 
 CREATE FUNCTION [dbo].[CheckAlert]
 ( 
-	@calldate as datetime,
-	@ct as int,
-	@status as varchar(50)
+	@expectdate as date,
+	@status as int 
 )
-RETURNS datetime
+RETURNS int
 AS
 BEGIN
-	declare @duration as int;
-	declare @expect as datetime;
-	declare @alertdate as date;
 	
-	IF @status = '(Pregnent)' BEGIN
-		set @duration=7
-		set @expect=DATEADD(day, @duration, @calldate);
--- 		set @alertdate=DATEADD(day, -4, @expect);
+	IF @status = 0 BEGIN
+		return 0;
 	END
-	
-	ELSE BEGIN
-		
-		set @duration=(CASE @ct
-			WHEN 1 THEN 7
-			When 2 Then DATEDIFF(day, @calldate, DATEADD(month, 1, @calldate))
-			END
-			);
-		set @expect=DATEADD(day, @duration, @calldate);
--- 		set @alertdate=DATEADD(day, -7, @expect);
+	IF @expectdate=null BEGIN
+		return 0;
 	END
 
-
-	return @expect;
+declare @alertdate as date = DATEADD(day, -7, @expectdate)
+	IF GETDATE()>@alertdate BEGIN
+		return 1;
+	END
 
 
 
