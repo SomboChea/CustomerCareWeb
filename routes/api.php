@@ -15,6 +15,10 @@ use App\Mom;
 |
 */
 
+Route::get('test',function(){
+    return ;
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -30,7 +34,7 @@ Route::prefix('/db')->group(function(){
 
     Route::get('/{table}',function($table){
         return DB::table($table)->get();
-    });
+    })->name('api.db.table');
 
     Route::get('column/{table}',function($table){
         return Schema::getcolumnlisting($table);
@@ -73,8 +77,8 @@ Route::prefix('auth')->group(function(){
 Route::prefix('/alert')->group(function(){
     Route::get('/', function() {
         //
-        return DB::select("Exec CheckDatePreg 0,'day'");     
-    });
+        return DB::table("viewAlert")->orderby('Expect_Call_Date','asc')->get();     
+    })->name('api.alert');
 
     Route::get('/month/{duration}', function($duration) {
         //
@@ -89,7 +93,7 @@ Route::prefix('/alert')->group(function(){
 
 Route::prefix('/user')->group(function () {
     Route::get('/','UserController@index');
-    Route::post('/new','UserController@insert');
+    Route::post('/news','UserController@insert');
     Route::post('/update/{id}','UserController@update');
     Route::get('/delete/{id}','UserController@delete');
     Route::put('/update', function () {

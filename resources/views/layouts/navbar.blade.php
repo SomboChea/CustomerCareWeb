@@ -67,9 +67,9 @@
 
             <!-- item-->
             <script>
-       
+       // TODO
              $.ajax({
-                  url:"{{ route('alert.days', ['duration'=>0]) }}",
+                  url:"{{ route('api.alert') }}",
                   method:"Get",
                   success:function(data){
                     var count=0;
@@ -81,8 +81,8 @@
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/admin.jpg" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
-                              <b>'+element.name+'</b>\
-                              <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
+                              <b>'+element.Mom_name+'</b>\
+                              <small class="text-muted">Call Date : '+element.Expect_Call_Date+'</small>\
                             </p>\
                           </a>';
                           count++;

@@ -12,11 +12,10 @@ class UserController extends Controller
     }
     public function Insert(Request $request){
         $user=new User();
-        $user->fullname_id=$request->fullname_id;
+        $user->fullname_id= $request->fullname_id;
         $user->username=$request->username;
         $user->password=$request->password;
         $user->role_id=$request->role_id;
-
         $user->save();
     }
  

@@ -14,6 +14,8 @@ let mix = require('laravel-mix');
 mix.js('node_modules/jquery/dist/jquery.js','public/js/')
    .js('resources/assets/js/app.js',
         'public/js/app.js')
+    .js(['resources/assets/js/js1.js',
+        'resources/assets/js/js2.js'],'public/js/test.js')
    .js(['node_modules/chartjs/chart.js',
         'resources/assets/js/jquery.nicescroll.js',
         'resources/assets/js/jquery.blockUI.js',
