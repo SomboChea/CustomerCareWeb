@@ -19,6 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/', function () {
+    return null;
+})->name("api");
+
 Route::prefix('/db')->group(function(){
     Route::get('/', function () {
         return DB::select("EXEC checkName ?",["sunlong"]);
