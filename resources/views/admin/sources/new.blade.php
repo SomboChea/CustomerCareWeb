@@ -7,8 +7,8 @@
     </div>
         
     <div class="card-body">
-        
-      <form autocomplete="off" action="#">
+      
+    <form autocomplete="off" action="{{route('api')}}">
           <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="type">From Source</label>
@@ -59,7 +59,14 @@
                 <option>...</option>
               </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" class="form-control">
+                <option selected="">This is Com</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
               <label for="address">Address</label>
               <input type="text" name="address" class="form-control" id="address">
             </div>
@@ -86,5 +93,8 @@
         swal("Great Job!","Saved","success");
       });
     });
+    $(".js-example-tags").select2({
+        tags: true
+      });
   </script>
 @endpush  

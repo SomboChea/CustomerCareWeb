@@ -27,6 +27,7 @@
         "fullcalendar": "^3.9.0",
         "jquery-ui": "^1.12.1",
         "moment": "^2.22.0",
+        "node-sass": "^4.9.0",
         "switchery": "0.0.2"
     }
 }
