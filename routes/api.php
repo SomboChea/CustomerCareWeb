@@ -81,7 +81,7 @@ Route::prefix('auth')->group(function(){
 Route::prefix('/alert')->group(function(){
     Route::get('/', function() {
         //
-        return DB::table("viewAlert")->orderby('Expect_Call_Date','asc')->get();     
+        return DB::table("viewAlert")->get();     
     })->name('api.alert');
 
     Route::get('/month/{duration}', function($duration) {
