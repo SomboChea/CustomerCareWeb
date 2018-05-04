@@ -58,7 +58,7 @@
             <div class="alert-first dropdown-item noti-title">
               <h5>
                 <small>
-                  <span class="alert_count label label-danger pull-xs-right">5</span>Allerts</small>
+                  <span class="alert_count label label-danger pull-xs-right">0</span>Allerts</small>
               </h5>
             </div>
 
@@ -67,39 +67,46 @@
 
             <!-- item-->
             <script>
-       
+       // TODO
+       var count=0;
              $.ajax({
-                  url:"{{ route('alert.days', ['duration'=>0]) }}",
+                  url:"{{ route('api.alert') }}",
                   method:"Get",
+                  error:function(){
+                    alert("err")
+                  },
                   success:function(data){
-                    var count=0;
-                    //data.forEach(function(element,index,arr){
+             
+                    $.each(data,function(index,element){
                       
-                      for(var i=0;i<5;i++){
-                        var element=data[i];
+                        if(count>4)
+                          return;
+                   
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/admin.jpg" alt="img" class="rounded-circle img-fluid"></div>\
                             <p class="notify-details">\
-                              <b>'+element.name+'</b>\
-                              <small class="text-muted">Call Date : '+new Date(element.created_date).toDateString()+'</small>\
+                              <b>'+element.Mom_name+'</b>\
+                              <small class="text-muted">Call Date : '+element.Expect_Call_Date+'</small>\
                             </p>\
                           </a>';
                           count++;
-                      
+                     
                         $(itm).insertAfter(".alert-first");
                         //$(".alert_navbar").append(itm);
                         $(".alert_count").text(count);
                    
                       
-                    };
+                    });
+                    //alert(count);
                     console.log(count);
                     if(count==0){
-                      $("<p class='text-center'>No Alert</p>").insertAfter(".alert-first");;
+             
+                      $("<p class='text-center'>No Alert</p>").insertAfter(".alert-first");
                     }
                   }
                 });
-            
+           
               </script>
 
             <!-- All-->

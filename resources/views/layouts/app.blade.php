@@ -15,9 +15,7 @@
     
     
 
-    <?php
-        $api_path=asset(env('APP_API_PATH').env('APP_API_VER'));
-    ?>
+   
 </head>
 <body class="adminbody">
 

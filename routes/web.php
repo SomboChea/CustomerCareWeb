@@ -48,7 +48,7 @@ Route::prefix('/admin')->group(function () {
     
     Route::get('test',function(){
         
-        return view('test',['result'=>User::all()]);
+        return view('tests.Test');
     });
 
     Route::prefix('/call')->group(function () {
@@ -112,7 +112,10 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/users')->group(function () {
         Route::get('/', function () {
-            return view("admin.users.view");
+            $url=route('api.db.table', ['table'=>'viewUser']) ;
+            $modal='admin.default.callmodal';
+            $hidden=array();
+            return view("admin.default.all",['url'=>$url,'hidden'=>'[]']);
         })->name('admin.users.view');
 
         Route::get('/new', function () {
