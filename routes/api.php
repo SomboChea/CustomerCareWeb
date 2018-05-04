@@ -15,20 +15,22 @@ use App\Mom;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::get('/', function () {
-    return null;
-})->name("api");
+Route::group(['prefix'=>'/','as'=>'api'], function () {
+    Route::get('/', function () {
+        return json_encode(['msg'=>'error']);
+    });
+});
 
 Route::prefix('/db')->group(function(){
     Route::get('/', function () {
         return DB::select("EXEC checkName ?",["sunlong"]);
     });
 
-    Route::get('/select/{statement}',function($stat){
+    Route::get('/select/{statement}',function($stat){   
         return DB::select($stat);
     })->name('api.db.select');
 
@@ -45,28 +47,25 @@ Route::prefix('/db')->group(function(){
 Route::prefix('/name')->group(function(){
     Route::get('/',function(){
         return Name::all();
-   });
-
+    });
    
-   Route::get('/{name_id}',function($id){
-    return Name::find($id);
-   })->where('name_id','[0-9]+');
+    Route::get('/{name_id}',function($id){
+        return Name::find($id);
+    })->where('name_id','[0-9]+');
 
-   Route::get('/{name}',function($name){
-    return DB::select("EXEC checkName ?",[$name]);
-   })->where('name','[a-zA-Z]+');
+    Route::get('/{name}',function($name){
+        return DB::select("EXEC checkName ?",[$name]);
+    })->where('name','[a-zA-Z]+');
 
-   Route::get('/search/{name}',function($name){
+    Route::get('/search/{name}',function($name){
         return Name::where('name','LIKE',"%$name%")->get();
-});
-   
+    });
 });
 
 Route::prefix('auth')->group(function(){
     Route::get("/",function(){
         echo "Access forbiden!";
     });
-    
     
     Route::post('/login',function(Request $req){
         User::where('username',$req->username)->where('password',$req->password);
