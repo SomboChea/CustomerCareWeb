@@ -35,14 +35,16 @@ Route::prefix('/db')->group(function(){
     Route::get('/select/{statement}',function($stat){
         return DB::select($stat);
     })->name('api.db.select');
-
+    Route::get('/checkusername/{username}',function($uname){
+        return User::where('username','=',$uname)->get();
+    })->name('api.user.check');
     Route::get('/{table}',function($table){
         return DB::table($table)->get();
     })->name('api.db.table');
 
     Route::get('column/{table}',function($table){
         return Schema::getcolumnlisting($table);
-    });
+    })->name('api.db.column');
     
 });
 

@@ -1,5 +1,5 @@
 @extends('layouts.content')
-@section('title', 'New User');
+@section('title', 'New User')
 @section('block-content')
 <style>
   .parsley-errors-list{
@@ -15,22 +15,21 @@
     <div class="card-body">
         
     						
-      <form id="myform" action="{{route('admin.users.view')}}" data-parsley-validate novalidate>
+      <form id="myform" method="POST" action="{{asset('api/v1/user/news')}}" data-parsley-validate novalidate>
+        @method('POST')
         <div class="form-group">
                     <label for="userName">Full Name :<span class="text-danger">*</span></label>
-                    <input type="text" name="nick" data-parsley-trigger="change" required placeholder="Enter Full name" class="form-control" id="userName">
+                    <input type="text" name="fullname" data-parsley-trigger="change" required placeholder="Enter Full name" class="form-control" id="fullname">
                 </div>
         <div class="form-group">
             <label for="userName">User Name<span class="text-danger">*</span></label>
-            <input type="text" name="nick" data-parsley-trigger="change" required placeholder="Enter user name" class="form-control" id="userName">
+            <input type="text" name="username"   data-parsley-uname="" required placeholder="Enter user name" class="form-control" id="userName">
+            <div class="errorBlock"></div> 
         </div>
-        <div class="form-group">
-            <label for="emailAddress">Email address<span class="text-danger">*</span></label>
-            <input type="email" name="email" data-parsley-trigger="change" required placeholder="Enter email" class="form-control" id="emailAddress">
-        </div>
+       
         <div class="form-group">
             <label for="pass1">Password<span class="text-danger">*</span></label>
-            <input id="pass1" type="password" placeholder="Password" required class="form-control">
+            <input id="pass1" name="password" type="password" placeholder="Password" required class="form-control">
         </div>
         <div class="form-group">
             <label for="passWord2">Confirm Password <span class="text-danger">*</span></label>
@@ -42,8 +41,10 @@
         <div class="form-group ">
                 <label for="passWord2">Role<span class="text-danger">*</span></label>
            
-            <select class="form-control Role-select" require data-parsley-select="">
+            <select name="role_id" class="form-control Role-select" require data-parsley-select="">
                 <option selected="selected" value="0">    --Choose Role--</option>
+                <option  value="1">User</option>
+                <option value="2">Admin</option>
               </select> 
               <div class="errorBlock"></div>     
         </div>
@@ -68,38 +69,46 @@
 
 
 <script>
-var parsleyConfig = {
-    errorsContainer: function(pEle) {
-        var $err = pEle.$element.siblings('.errorBlock');
-        return $err;
+    var parsleyConfig = {
+        errorsContainer: function(pEle) {
+            var $err = pEle.$element.siblings('.errorBlock');
+            return $err;
+        }
     }
-}
-
-$('#myform').parsley(parsleyConfig);
-    // TODO
-    $.ajax({
-        url:"{{asset(env('APP_API_PATH').env('APP_API_VER'))}}/db/tbl_role",
-        success:function(data){
-            console.log(data);
-            $.each(data,function(ind,element){
-                $(".Role-select").append("<option value='"+element['id']+"'>"+element['role']+"</option>");
-             })
-            }
-    })
- 
     
-        </script>
-        <script>
-          window.Parsley.addValidator('select', {
-            validateString: function(value) {      
-              return value !=0;
-            },
-            messages: {
-              en: 'Value Must be Role',
-            }
+    $('#myform').parsley(parsleyConfig);
+        // TODO
+      
+              window.Parsley.addValidator('select', {
+                validateString: function(value) {      
+                  return value !=0;
+                },
+                messages: {
+                  en: 'Value Must be Role'
+                }
+              });
+              window.Parsley.addValidator('uname',{
+             
+                  validateString:function(data){
+                    var check=false;
+                      var dat=$.ajax({
+                          url:"{{asset('api/v1/db/checkusername')}}/"+data,
+                          async:false,
+                          success:function(data){
+                              console.log("ajax");
+                                check= $(data).length==0;
+                          }
+                      });
+                      console.log(check);
+                      return check;
+                  },
+                  messages:{
+                      en:"Username Already Be taken"
+                  }
+    
+              });
+              $(".Role-select").select2({
+                tags: false
           });
-          $(".Role-select").select2({
-            tags: false
-      });
-</script>
+    </script>
 @endsection()

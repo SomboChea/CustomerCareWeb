@@ -53,10 +53,8 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
-            $url=route('api.db.select', ['stat'=>'select * from viewAllCall Where call_status=0']) ;
-            $modal='admin.default.callmodal';
-            $hidden=array('table');
-            return view('admin.default.all',['url'=>$url,'modal'=>$modal,'hidden'=>json_encode($hidden)]);
+          
+            return view('admin.call.all');
         })->name('admin.call.all');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {
@@ -112,10 +110,8 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/users')->group(function () {
         Route::get('/', function () {
-            $url=route('api.db.table', ['table'=>'viewUser']) ;
-            $modal='admin.default.callmodal';
-            $hidden=array();
-            return view("admin.default.all",['url'=>$url,'hidden'=>'[]']);
+           
+            return view("admin.users.all");
         })->name('admin.users.view');
 
         Route::get('/new', function () {
