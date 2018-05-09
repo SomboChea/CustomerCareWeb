@@ -33,7 +33,7 @@ Route::prefix('/call')->group(function(){
         return DB::Select('Select * from viewlastcall where Count>1');
     })->name('api.call.step');
     Route::get('/pregnent',function(){
-        return DB::Select('select * from `viewlastcall`');
+        return DB::Select('select * from `viewlastcall` where `Kid_Name`="(Pregnent)"');
     })->name('api.call.pregnent');
 });
 

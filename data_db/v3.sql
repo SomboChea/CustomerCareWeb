@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 09/05/2018 19:50:48
+ Date: 09/05/2018 21:10:47
 */
 
 SET NAMES utf8mb4;
@@ -280,7 +280,7 @@ CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER V
 
 max(p.id) as ID ,
 GetName(max(m.id)) as Mom_name,
-'(Pregnent)' as Kid_Name,
+'(Pregnent)'  COLLATE utf8mb4_general_ci as Kid_Name,
 count(*) as Count , 
 Convert(max(p.created_at),date) as CalledDate,
 CheckExpectCall(max(m.expected_date),Count(*),'(Pregnent)',max(m.expected_date)) as Expect_Call_Date,

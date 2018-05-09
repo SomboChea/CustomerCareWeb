@@ -51,11 +51,11 @@
     url:"{{route('api.call.new')}}",
      method:"GET",
      success:function(data){
-       
-      var Cols=Object.keys(data[0]);
+
       console.log('start');
       data.forEach(function(e,index){
-       
+              
+      var Cols=Object.keys(data[0]);
          $("#nodata").remove();
           var item="<tr data-index='"+index+"' style='cursor:pointer'>";
           Cols.forEach(function(col){
