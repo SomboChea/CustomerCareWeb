@@ -1,6 +1,6 @@
 @extends('layouts.content')
 
-@include('admin.components.location')
+@include('components\location')
 
 @section('title', 'New User')
 @section('block-content')

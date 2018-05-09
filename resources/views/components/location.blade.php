@@ -1,11 +1,38 @@
 @section('location')
-
 <div class="form-group">
-    <label for="userName">Location<span class="text-danger">*</span></label>
-    <input type="text" name="username"   data-parsley-uname="" required placeholder="Enter user name" class="form-control" id="userName">
-    <div class="errorBlock"></div> 
+
+    <label for="input-group">Location</label>
+<div class="input-group mb-3">
+<div class="form-control">
+    <select class="province-select">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>   
 </div>
 
+<div class="form-control">
+    <select class="district-select">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>   
+</div>
 
+<div class="form-control">
+    <select class="commune-select">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>   
+      
+</div>
+</div>
+</div>
 
+<script>
+$(document).ready(function(){
+    alert("Hello");
+})
+</script>
 @endsection
