@@ -25,17 +25,17 @@
                   </a>
               </li>
               <li>
-                  <a href="{{ route('admin.call.name',['type'=>'new']) }}">New
+                  <a href="{{ route('admin.call.new') }}">New
                     <span class="label radius-circle bg-danger float-right">5</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ route('admin.call.name',['type'=>'pregnent']) }}">Pregnent
+                  <a href="{{ route('admin.call.pregnent') }}">Pregnent
                     <span class="label radius-circle bg-primary float-right">10</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ route('admin.call.name',['type'=>'step']) }}">Step
+                  <a href="{{ route('admin.call.step') }}">Step
                       <span class="label radius-circle bg-warning float-right">15</span>
                   </a>
               </li>

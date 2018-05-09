@@ -25,6 +25,18 @@ Route::group(['prefix'=>'/','as'=>'api'], function () {
     });
 });
 
+Route::prefix('/call')->group(function(){
+    Route::get('/new',function(){
+        return DB::Select('Select * from viewlastcall where Count=1');
+    })->name('api.call.new');
+    Route::get('/step',function(){
+        return DB::Select('Select * from viewlastcall where Count>1');
+    })->name('api.call.step');
+    Route::get('/pregnent',function(){
+        return DB::Select('select * from `viewlastcall`');
+    })->name('api.call.pregnent');
+});
+
 Route::prefix('/db')->group(function(){
     Route::get('/', function () {
         return DB::select("EXEC checkName ?",["sunlong"]);

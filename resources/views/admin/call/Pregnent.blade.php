@@ -34,7 +34,7 @@
 <script>    
     var hidden=["Mom_namge"];
     $.ajax({
-      url:"{{route('api.db.column',['table'=>'viewlastcall'])}}",
+      url:"{{route('api.db.column',['table'=>'viewLastcall'])}}",
       success:function(data){
   
           data.forEach(function(element){
@@ -48,7 +48,7 @@
       }
   });
  $.ajax({      
-     url:'{{route("api.db.table",["table"=>"viewlastcall"])}}',
+    url:"{{route('api.call.pregnent')}}",
      method:"GET",
      success:function(data){
        

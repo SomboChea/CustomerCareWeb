@@ -16,7 +16,7 @@
       <tr  id="nodata">
           <td></td>
           <td></td>
-          <td></td>
+      
           <td>No Data</td>
           <td></td>
           <td></td>
@@ -36,6 +36,7 @@
 
     $.ajax({
         url:"{{route('api.db.column',['table'=>'viewusers'])}}",
+        async:false,
         success:function(data){
             var hidden=["password"];
         
@@ -50,6 +51,7 @@
    $.ajax({      
        url:'{{route("api.db.table",["table"=>"viewusers"])}}',
        method:"GET",
+       async:false,
        success:function(data){
      
           

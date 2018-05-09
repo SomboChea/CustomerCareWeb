@@ -53,9 +53,18 @@ Route::prefix('/admin')->group(function () {
 
     Route::prefix('/call')->group(function () {
         Route::get('/', function () {
-          
             return view('admin.call.all');
         })->name('admin.call.all');
+
+        Route::get('/new',function(){
+            return view("admin.call.new");
+        })->name('admin.call.new');
+        Route::get('/step',function(){
+            return view('admin.call.step');
+        })->name('admin.call.step');
+        Route::get('/pregnent',function(){
+            return view("admin.call.Pregnent");
+        })->name('admin.call.pregnent');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {
             if(empty($name))
