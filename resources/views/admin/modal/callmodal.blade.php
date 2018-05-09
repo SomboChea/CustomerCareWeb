@@ -1,5 +1,5 @@
 @section('modaljs')
-    $('#infotitle').text(element.name)
+    $('#infotitle').text(element.Mom_name)
     $('#showmodal').click()
 @endsection
 
@@ -14,7 +14,17 @@
               </button>
             </div>
             <div class="modal-body">
-              
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Why : </label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+   
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Memo</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

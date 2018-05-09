@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 Route::get('/Test',function(){
-    return view('tests.welcome');
+    return view('test');
 });
 
 Route::post('test/name','UserController@test');

@@ -3,7 +3,7 @@
 
 @section('block-content')
 {{--  Modal start here  --}}
-
+@include('admin.modal.callmodal')
 <div class="row">
  <div class="col-md-12">
  <table id="Userrow" class="table table-striped table-bordered" style="width:100%">
@@ -77,6 +77,7 @@
       }).click(function(e){
          var element=data[$(this).data('index')];
        
+         @yield('modaljs')
          
       })
          $("#Userrow").DataTable();
@@ -85,7 +86,7 @@
 
  
 </script>
-
+@yield('modal')
 <button hidden="hidden" id="showmodal" data-target="#infomodal" data-backdrop="static" data-toggle="modal" tyoe="button">modal</button>
 
   @yield('modal')

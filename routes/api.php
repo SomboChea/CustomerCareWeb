@@ -19,10 +19,17 @@ use App\Mom;
 //     return $request->user();
 // });
 
+
 Route::group(['prefix'=>'/','as'=>'api'], function () {
     Route::get('/', function () {
         return json_encode(['msg'=>'error']);
     });
+});
+
+
+
+Route::get('/test',function(){
+    return view('test');
 });
 
 Route::prefix('/call')->group(function(){
@@ -35,6 +42,9 @@ Route::prefix('/call')->group(function(){
     Route::get('/pregnent',function(){
         return DB::Select('select * from `viewlastcall` where `Kid_Name`="(Pregnent)"');
     })->name('api.call.pregnent');
+    Route::get("/table/pregent",function(){
+       
+    });
 });
 
 Route::prefix('/db')->group(function(){
