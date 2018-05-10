@@ -1,4 +1,5 @@
 @extends('layouts.content')
+@include('components/location')
 @section('title', 'New Source')
 @section('block-content')
 <div class="card mb-3">
@@ -44,7 +45,8 @@
               <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.org">
             </div>
           </div>
-          <div class="form-row">
+          @yield("location")
+          {{--  <div class="form-row">
             <div class="form-group col-md-3">
               <label for="province">Province / City</label>
               <select id="province" name="province" class="form-control">
@@ -70,7 +72,7 @@
               <label for="address">Address</label>
               <input type="text" name="address" class="form-control" id="address">
             </div>
-          </div>
+          </div>  --}}
           <div class="row">
             <div class="form-group col-md-12">
               <label for="memo">Memo</label>

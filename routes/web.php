@@ -18,6 +18,23 @@ Route::get('/', function () {
     return view('index');
 });
 
+<<<<<<< HEAD
+=======
+
+
+Route::get('/Test',function(){
+    return view('test');
+});
+
+Route::post('test/name','UserController@test');
+
+// Route::post('test/name',function(Request $req){
+//     echo $r
+// });
+
+
+
+>>>>>>> fb4b14dd2e343cc847374f30733e2833d2b86ca4
 Route::get('person', 'PersonController@getPerson');
 
 Route::prefix('/admin')->group(function () {
