@@ -29,6 +29,7 @@
       $.ajax({
         url:"https://www.youtube.com",
         datatype:"html",
+        crossDomain:true,
         success:function(data){
           alert("ddd");
         }
