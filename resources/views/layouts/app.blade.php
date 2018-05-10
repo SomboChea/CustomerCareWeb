@@ -12,15 +12,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    
-    
 
-   
 </head>
 <body class="adminbody">
 
     <div id="main">
-        
+
         @includeIf("layouts.navbar")
         @includeIf("layouts.menu")
 
@@ -32,7 +29,7 @@
 
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
-    
+
     <!-- BEGIN Java Script for this page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -59,7 +56,7 @@
                         backgroundColor: '#EBEFF3',
                         data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
                     }]
-    
+
                 },
                 options: {
                     tooltips: {
@@ -77,8 +74,8 @@
                     }
                 }
             });
-    
-    
+
+
             var ctx2 = document.getElementById("pieChart").getContext('2d');
             var pieChart = new Chart(ctx2, {
                 type: 'pie',
@@ -106,10 +103,10 @@
                 options: {
                     responsive: true
                 }
-    
+
             });
-    
-    
+
+
             var ctx3 = document.getElementById("doughnutChart").getContext('2d');
             var doughnutChart = new Chart(ctx3, {
                 type: 'doughnut',
@@ -137,12 +134,12 @@
                 options: {
                     responsive: true
                 }
-    
+
             });
         </script>
         <!-- END Java Script for this page -->
-        
-        
+
+
         @stack('select2')
 </body>
 </html>

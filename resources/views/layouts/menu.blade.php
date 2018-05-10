@@ -106,6 +106,9 @@
           </a>
           <ul class="list-unstyled">
             <li>
+              <a href="{{ route('admin.reports.all') }}">All</a>
+            </li>
+            <li>
               <a href="#">Daily</a>
             </li>
             <li>
@@ -161,7 +164,7 @@
             </li>
           </ul>
         </li>
-        
+
       </ul>
       <div class="clearfix"></div>
     </div>

@@ -15,29 +15,12 @@ use App\User;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-   return view('index');
-   //return redirect()->route('TestForm');
-    // I pushed
+    return view('index');
 });
-
-
-
-Route::get('/Test',function(){
-    return view('tests.welcome');
-});
-
-Route::post('test/name','UserController@test');
-
-// Route::post('test/name',function(Request $req){
-//     echo $r
-// });
-
-
 
 Route::get('person', 'PersonController@getPerson');
 
 Route::prefix('/admin')->group(function () {
-
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
@@ -45,9 +28,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/calendar', function () {
         return view('admin.calendar');
     });
-    
-    Route::get('test',function(){
-        
+
+    Route::get('test', function () {
         return view('tests.Test');
     });
 
@@ -56,25 +38,26 @@ Route::prefix('/admin')->group(function () {
             return view('admin.call.all');
         })->name('admin.call.all');
 
-        Route::get('/new',function(){
+        Route::get('/new', function () {
             return view("admin.call.new");
         })->name('admin.call.new');
-        Route::get('/step',function(){
+        Route::get('/step', function () {
             return view('admin.call.step');
         })->name('admin.call.step');
-        Route::get('/pregnent',function(){
+        Route::get('/pregnent', function () {
             return view("admin.call.Pregnent");
         })->name('admin.call.pregnent');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {
-            if(empty($name))
+            if (empty($name)) {
                 return view('admin.call.view', ['type'=>$type]);
-            else
-            return view('admin.call.queue', ['type'=>$type, 'name'=>$name]);
+            } else {
+                return view('admin.call.queue', ['type'=>$type, 'name'=>$name]);
+            }
         })->name('admin.call.name');
     });
 
-    
+
     Route::prefix('/customers')->group(function () {
         Route::get('/', function () {
             return view('admin.customers.index');
@@ -99,27 +82,36 @@ Route::prefix('/admin')->group(function () {
         })->name('admin.sources.new');
 
         Route::get('/{type}/{name?}', function ($type, $name=null) {
-            if(empty($name))
+            if (empty($name)) {
                 return view('admin.sources.view', ['type'=>$type]);
-            else
+            } else {
                 return view('admin.sources.profile', ['type'=>$type,'name'=>$name]);
+            }
         })->name('admin.sources.profile');
-
     });
 
     Route::prefix('/products')->group(function () {
         Route::get('/', function () {
             return view('admin.product.view');
         })->name('admin.product.view');
-        
+
         Route::get('/new', function () {
             return view('admin.product.new');
         })->name('admin.product.new');
     });
 
+    Route::prefix('/reports')->group(function () {
+        Route::get('/', function () {
+            echo "All Reports";
+        });
+
+        Route::get('/simple', function () {
+            return view('admin.reports.simple');
+        })->name('admin.reports.all');
+    });
+
     Route::prefix('/users')->group(function () {
         Route::get('/', function () {
-           
             return view("admin.users.all");
         })->name('admin.users.view');
 
@@ -135,7 +127,6 @@ Route::prefix('/admin')->group(function () {
     Route::post('/profile', function () {
         return view('admin.user.profile');
     })->name('admin.profile');
-
 });
 
 Route::get('login', function () {
@@ -145,4 +136,3 @@ Route::get('login', function () {
 Route::get('logout', function () {
     return "Logout";
 });
-
