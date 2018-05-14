@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/Test',function(){
-    return view('test');
+    return redirect( route("admin.sources.profile")."/hcp");
 });
 
 Route::post('test/name','UserController@test');
@@ -94,6 +94,8 @@ Route::prefix('/admin')->group(function () {
                 return view('admin.sources.profile', ['type'=>$type,'name'=>$name]);
             }
         })->name('admin.sources.profile');
+
+        
     });
 
     Route::prefix('/products')->group(function () {

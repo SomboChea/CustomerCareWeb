@@ -96,6 +96,21 @@ Route::prefix('auth')->group(function(){
     })->name('login');
     
 });
+Route::prefix('location')->group(function(){
+    Route::get('/',function(){})->name('api.location');
+
+    Route::get('/province',function(){
+        return DB::select("Call ShowProvince()");
+    })->name('api.province');
+
+    Route::get('/district/{id}',function($pid){
+        return DB::select("Call ShowDistrict($pid)");
+    })->name('api.district');
+
+    Route::get('/commune/{id}',function($did){
+        return DB::select("Call ShowCommune($did)");
+    })->name('api.commune');
+});
 
 Route::prefix('/alert')->group(function(){
     Route::get('/', function() {
@@ -125,5 +140,20 @@ Route::prefix('/user')->group(function () {
 });
 
 Route::prefix('/sources')->group(function () {
+    Route::get('/',function(){})->name('api.source');
+
     Route::post('/new', 'ReferController@store')->name('api.sources.save');
+
+    Route::get('/hcp',function(){
+        return DB::select("Select * from viewrefers where type_id=1");
+    })->name('api.source.hcp');
+    Route::get('/retail',function(){
+        return DB::select("Select * from viewrefers where type_id=2");
+    })->name('api.source.retail');
+    Route::get('/pc',function(){
+        return DB::select("Select * from viewrefers where type_id=3");
+    })->name('api.source.pc');
+    Route::get('/other',function(){
+        return DB::select("Select * from viewrefers where type_id=4");
+    })->name('api.source.other');
 });
