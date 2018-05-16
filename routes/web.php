@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/Test',function(){
-    return redirect( route("admin.sources.profile")."/hcp");
+    return view('Test');
 });
 
 Route::post('test/name','UserController@test');
