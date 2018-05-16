@@ -26,12 +26,6 @@ Route::group(['prefix'=>'/','as'=>'api'], function () {
     });
 });
 
-
-
-Route::get('/test',function(){
-    return view('test');
-});
-
 Route::prefix('/call')->group(function(){
     Route::get('/new',function(){
         return DB::Select('Select * from viewlastcall where Count=1');
@@ -43,7 +37,7 @@ Route::prefix('/call')->group(function(){
         return DB::Select('select * from `viewlastcall` where `Kid_Name`="(Pregnent)"');
     })->name('api.call.pregnent');
     Route::get("/table/pregent",function(){
-       
+
     });
 });
 
@@ -52,7 +46,7 @@ Route::prefix('/db')->group(function(){
         return DB::select("EXEC checkName ?",["sunlong"]);
     });
 
-    Route::get('/select/{statement}',function($stat){   
+    Route::get('/select/{statement}',function($stat){
         return DB::select($stat);
     })->name('api.db.select');
     Route::get('/checkusername/{username}',function($uname){
@@ -65,14 +59,14 @@ Route::prefix('/db')->group(function(){
     Route::get('column/{table}',function($table){
         return Schema::getcolumnlisting($table);
     })->name('api.db.column');
-    
+
 });
 
 Route::prefix('/name')->group(function(){
     Route::get('/',function(){
         return Name::all();
     });
-   
+
     Route::get('/{name_id}',function($id){
         return Name::find($id);
     })->where('name_id','[0-9]+');
@@ -88,13 +82,13 @@ Route::prefix('/name')->group(function(){
 
 Route::prefix('auth')->group(function(){
     Route::get("/",function(){
-        echo "Access forbiden!";
+        return redirect(route('api'));
     });
-    
+
     Route::post('/login',function(Request $req){
         User::where('username',$req->username)->where('password',$req->password);
     })->name('login');
-    
+
 });
 Route::prefix('location')->group(function(){
     Route::get('/',function(){})->name('api.location');
@@ -115,17 +109,17 @@ Route::prefix('location')->group(function(){
 Route::prefix('/alert')->group(function(){
     Route::get('/', function() {
         //
-        return DB::table("viewAlert")->get();     
+        return DB::table("viewAlert")->get();
     })->name('api.alert');
 
     Route::get('/month/{duration}', function($duration) {
         //
-        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"month"]);     
+        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"month"]);
     });
 
     Route::get('/day/{duration}', function($duration) {
         //
-        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"day"]);     
+        return DB::select("Exec CheckDatePreg ? , ?", [$duration,"day"]);
     })->name('alert.days');
 });
 
