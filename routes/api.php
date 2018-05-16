@@ -42,16 +42,19 @@ Route::prefix('/call')->group(function(){
 });
 
 Route::prefix('/db')->group(function(){
+
     Route::get('/', function () {
         return DB::select("EXEC checkName ?",["sunlong"]);
-    });
+    })->name('api.db');
 
     Route::get('/select/{statement}',function($stat){
         return DB::select($stat);
     })->name('api.db.select');
+
     Route::get('/checkusername/{username}',function($uname){
         return User::where('username','=',$uname)->get();
     })->name('api.user.check');
+
     Route::get('/{table}',function($table){
         return DB::table($table)->get();
     })->name('api.db.table');
@@ -132,6 +135,25 @@ Route::prefix('/user')->group(function () {
         return "Updated";
     });
 });
+
+Route::prefix('/product')->group(function(){
+    Route::get('/',function(){
+        return DB::select('select * from viewProduct');
+    })->name('api.product');
+});
+
+Route::prefix('/customer')->group(function(){
+    Route::get('/',function(){})->name('api.customer');
+
+    Route::get('/mom',function(){
+        return DB::select('select * from viewMom');
+    })->name('api.customer.mom');
+
+    Route::get('/kid',function(){
+        return DB::select('select * from viewKid');
+    })->name('api.customer.kid');
+});
+
 
 Route::prefix('/sources')->group(function () {
     Route::get('/',function(){})->name('api.source');
