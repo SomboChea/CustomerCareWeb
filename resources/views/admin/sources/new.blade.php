@@ -2,6 +2,12 @@
 @include('components/location')
 @section('title', 'New Source')
 @section('block-content')
+<style>
+    .parsley-errors-list{
+      color:red;
+      list-style:none;  
+    }
+  </style>
 <div class="card mb-3">
     <div class="card-header">
         <h3><i class="fa fa-check-square-o"></i> Fill all required </h3>
@@ -9,11 +15,13 @@
         
     <div class="card-body">
       
-    <form autocomplete="off" action="{{route('api')}}">
-          <div class="form-row">
+    <form data-parsley-validate method="POST" id="srcnew" autocomplete="off" action="{{route('api.sources.save')}}">
+      @csrf    
+  
+      <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="type">From Source</label>
-                <select id="type" name="type" class="form-control">
+                <select id="type" name="type" class="form-control" required>
                   <option selected value="1">Hospital / Clinic</option>
                   <option value="2">Retail Shop</option>
                   <option value="3">Personal Consultant</option>
@@ -24,25 +32,25 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Name</label>
-              <input type="text" class="form-control" name="name" id="name" placeholder="Name..." autocomplete="off">
+              <input required type="text" class="form-control" name="name" id="name" placeholder="Name..." autocomplete="off">
             </div>
             <div class="form-group col-md-6">
               <label for="owner">Owner</label>
-              <input type="text" class="form-control" name="owner" id="owner" placeholder="Owner..." autocomplete="off">
+              <input  required type="text" class="form-control" name="owner" id="owner" placeholder="Owner..." autocomplete="off">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="tel_1">Tel Line 1</label>
-              <input type="text" class="form-control" name="tel_1" id="tel_1" placeholder="076 999 5149">
+              <input  required type="text" class="form-control" name="tel_1" id="tel_1" placeholder="076 999 5149">
             </div>
             <div class="form-group col-md-3">
               <label for="tel2">Tel Line 2</label>
-              <input type="text" class="form-control" name="tel_2" id="tel2" placeholder="012 999 999">
+              <input  required type="text" class="form-control" name="tel_2" id="tel2" placeholder="012 999 999">
             </div>
             <div class="form-group col-md-6">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.org">
+              <input  required type="email" class="form-control" name="email" id="email" placeholder="example@domain.org">
             </div>
           </div>
           @yield("location")
@@ -76,7 +84,7 @@
           <div class="row">
             <div class="form-group col-md-12">
               <label for="memo">Memo</label>
-              <textarea class="form-control" name="memo" id="memo" rows="3"></textarea>
+              <textarea  class="form-control" name="memo" id="memo" rows="3"></textarea>
             </div>
           </div>
           <button type="submit" class="btn btn-primary" id="submit">Submit</button>
@@ -85,12 +93,21 @@
     </div>							
   </div>
 
+
 @endsection()
 
 @push('select2')
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="http://parsleyjs.org/dist/parsley.min.js"></script>
   <script>
+  
+      {{--  $("#srcnew").parsley().done(function(){
+        alert("done");
+      });  --}}
+
+    
     $(document).ready(function () {
+   
       $('#submit').click(function() {
         swal("Great Job!","Saved","success");
       });
@@ -98,5 +115,6 @@
     $(".js-example-tags").select2({
         tags: true
       });
+   
   </script>
 @endpush  

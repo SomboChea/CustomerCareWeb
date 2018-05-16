@@ -18,6 +18,7 @@ class UserController extends Controller
         $user->password=$request->password;
         $user->role_id=$request->role_id;
         $user->save();
+        return redirect(route('admin.users.view'));
     }
  
     public function update(Request $request, $id){

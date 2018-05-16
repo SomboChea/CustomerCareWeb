@@ -29,7 +29,7 @@
             <input type="text" name="username"   data-parsley-uname="" required placeholder="Enter user name" class="form-control" id="userName">
             <div class="errorBlock"></div> 
         </div>
-       @yield("location")
+
         <div class="form-group">
             <label for="pass1">Password<span class="text-danger">*</span></label>
             <input id="pass1" name="password" type="password" placeholder="Password" required class="form-control">
