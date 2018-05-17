@@ -18,14 +18,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/Test',function(){
-    return redirect( route("admin.sources.profile")."/hcp");
-});
-
-Route::post('test/name','UserController@test');
-
-Route::get('person', 'PersonController@getPerson');
-
 Route::prefix('/admin')->group(function () {
 
   Route::get('/', function () {
@@ -136,8 +128,8 @@ Route::prefix('/admin')->group(function () {
 
 Route::get('login', function () {
     return view('auth.login');
-});
+})->name('login');
 
 Route::get('logout', function () {
-    return "Logout";
-});
+    return redirect(route('login'));
+})->name('logout');

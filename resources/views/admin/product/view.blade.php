@@ -29,23 +29,16 @@
        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
        
-       <script>  
-            var hidden=[];
-           if("{{$type}}"=="mom")  {
-               hidden=["create_at","tel_2","fb", "other","location_id", "status", "logger_id"];
-            }
-            else{
-                hidden=['mom_id'];
-            }
-           
+       <script>    
+           var hidden=[];
            $.ajax({
-             url:"{{route('api.db')}}/column/view{{$type}}",
+             url:"{{route('api.db.column',['table'=>'viewProduct'])}}",
              success:function(data){
          
                  data.forEach(function(element){
                      if(hidden.includes(element))
                           return;
-                        console.log(element);
+             
                      var colheader='<th scope="col">'+element+'</th>';
                       $(".gridheader").append(colheader);
                  })
@@ -53,7 +46,7 @@
              }
          });
         $.ajax({      
-            url:'{{route("api.customer")}}/{{$type}}',
+            url:'{{route("api.product")}}',
             method:"GET",
             success:function(data){
               

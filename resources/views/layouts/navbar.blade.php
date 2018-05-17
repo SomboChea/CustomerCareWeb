@@ -5,7 +5,7 @@
     <div class="headerbar-left">
       <a href="{{ route('dashboard') }}" class="logo">
         <img alt="Logo" src="{{ asset(env('APP_STATIC_LOGO')) }}" />
-        <span>CC DEMO</span>
+        <span>Tel-Marketing</span>
       </a>
     </div>
     <!-- End LOGO -->
@@ -125,7 +125,7 @@
             <!-- item-->
             <div class="dropdown-item noti-title">
               <h5 class="text-overflow">
-                <small>Hello, admin</small>
+                <small>Hello, {{ session('username') }}</small>
               </h5>
             </div>
 
@@ -136,7 +136,7 @@
             </a>
 
             <!-- item-->
-            <a href="#" class="dropdown-item notify-item">
+            <a href="{{ route('logout') }}" class="dropdown-item notify-item">
               <i class="fa fa-power-off"></i>
               <span>Logout</span>
             </a>

@@ -13,7 +13,7 @@
         <div class="card">
           <img src="{{asset('assets/images/logo.png')}}" class="img-fluid">
             <h1 class="title">Login</h1>
-            <form action="{{ route('login') }}" method="post">
+            <form action="{{ route('auth.login') }}" method="post">
 
                 <div class="input-container">
                     <input type="text" id="username" name="username" required="required" />

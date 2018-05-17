@@ -86,11 +86,14 @@ Route::prefix('auth')->group(function(){
     });
 
     Route::post('/login',function(Request $req){
-        //User::where('username',$req->username)->where('password',$req->password)->count();
-        return redirect(route('admin'));
-    })->name('login');
+        $id = User::where('username',$req->username)->where('password',$req->password)->get();
+
+        session(['username'=>$id[0]['username']]);
+        return redirect(route('dashboard'));
+    })->name('auth.login');
 
 });
+
 Route::prefix('location')->group(function(){
     Route::get('/',function(){})->name('api.location');
 
