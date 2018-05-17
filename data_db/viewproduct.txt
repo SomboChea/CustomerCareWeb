@@ -1,0 +1,10 @@
+SELECT
+tbl_product.id,
+tbl_product.`name`,
+tbl_product.info,
+-- GetName( tbl_product.`owner`) Owner,
+( case tbl_product.`owner` when 1 then 'Yes' else 'No' end) as `owner`,
+tbl_product.`level`,
+tbl_product.`status`
+FROM
+tbl_product 
