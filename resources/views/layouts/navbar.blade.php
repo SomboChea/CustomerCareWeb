@@ -21,7 +21,7 @@
             <span class="notif-bullet"></span>
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-            
+
             <!-- item-->
             <div class="dropdown-item noti-title">
               <h5>
@@ -53,7 +53,7 @@
             <span class="notif-bullet"></span>
           </a>
           <div class=" dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg">
-            
+
             <!-- item-->
             <div class="alert-first dropdown-item noti-title">
               <h5>
@@ -62,7 +62,7 @@
               </h5>
             </div>
 
-        
+
 
 
             <!-- item-->
@@ -76,12 +76,12 @@
                     alert("err")
                   },
                   success:function(data){
-             
+
                     $.each(data,function(index,element){
-                      
+
                         if(count>4)
                           return;
-                   
+
                         var itm= '<a href="#" class="dropdown-item notify-item">\
                             <div class="notify-icon bg-faded">\
                               <img src="assets/images/avatars/admin.jpg" alt="img" class="rounded-circle img-fluid"></div>\
@@ -91,22 +91,22 @@
                             </p>\
                           </a>';
                           count++;
-                     
+
                         $(itm).insertAfter(".alert-first");
                         //$(".alert_navbar").append(itm);
                         $(".alert_count").text(count);
-                   
-                      
+
+
                     });
                     //alert(count);
                     console.log(count);
                     if(count==0){
-             
+
                       $("<p class='text-center'>No Alert</p>").insertAfter(".alert-first");
                     }
                   }
                 });
-           
+
               </script>
 
             <!-- All-->
@@ -126,7 +126,7 @@
             <div class="dropdown-item noti-title">
               <h5 class="text-overflow">
                 <small>Hello, admin</small>
-              </h5> 
+              </h5>
             </div>
 
             <!-- item-->
@@ -135,13 +135,13 @@
               <span>Profile</span>
             </a>
 
-            <!-- item-->  
+            <!-- item-->
             <a href="#" class="dropdown-item notify-item">
               <i class="fa fa-power-off"></i>
               <span>Logout</span>
             </a>
 
-            
+
           </div>
         </li>
 

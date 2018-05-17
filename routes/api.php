@@ -86,7 +86,8 @@ Route::prefix('auth')->group(function(){
     });
 
     Route::post('/login',function(Request $req){
-        User::where('username',$req->username)->where('password',$req->password);
+        //User::where('username',$req->username)->where('password',$req->password)->count();
+        return redirect(route('admin'));
     })->name('login');
 
 });
