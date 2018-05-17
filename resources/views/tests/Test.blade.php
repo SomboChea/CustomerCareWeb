@@ -8,22 +8,7 @@
     
 </head>
 <body>
-    <script type="text/javascript" src="{{asset('js/jquery.js')}}" ></script>
-    <script>
-        $.ajax({
-            url:'{{asset("api/v1/db/viewLastCall")}}',
-            success:function(data){
-                console.log(data);
-            }
-        })
-        function test(){
-
-            
-
-        };
-        test();
-    </script>
-
+    <h1>Result :  {{Session('name')}}</h1>
 
 </body>
 </html>

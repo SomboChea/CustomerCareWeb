@@ -13,7 +13,7 @@
         <div class="card"></div> 
         <div class="card"> 
             <h1 class="title">Login</h1> 
-            <form action="{{ route('login') }}"> 
+            <form action="{{ route('authlogin') }}"> 
                 <div class="input-container"> 
                     <input type="text" id="username" required="required" /> 
                     <label for="username">Username</label> 

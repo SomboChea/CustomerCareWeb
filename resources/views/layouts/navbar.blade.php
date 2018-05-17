@@ -125,7 +125,7 @@
             <!-- item-->
             <div class="dropdown-item noti-title">
               <h5 class="text-overflow">
-                <small>Hello, admin</small>
+                <small>Hello, {{Session::get('username')}}</small>
               </h5> 
             </div>
 

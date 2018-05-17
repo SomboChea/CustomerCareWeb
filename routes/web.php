@@ -19,8 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('/Test',function(){
-    return view('Test');
+    Session::put('sljds','ssdsdsdsd');
 });
+
+Route::get('/result',function(){
+    return view('tests/Test');
+})->name('result');
 
 Route::post('test/name','UserController@test');
 

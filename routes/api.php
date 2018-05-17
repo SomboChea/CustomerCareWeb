@@ -41,6 +41,10 @@ Route::prefix('/call')->group(function(){
     });
 });
 
+Route::get('test',function(){
+    Session::put('othername','SB');
+});
+
 Route::prefix('/db')->group(function(){
 
     Route::get('/', function () {
@@ -90,7 +94,9 @@ Route::prefix('auth')->group(function(){
 
     Route::post('/login',function(Request $req){
         User::where('username',$req->username)->where('password',$req->password);
-    })->name('login');
+        Session::put('username','sombo');
+        return redirect(route('dashboard'));
+    })->name('auth.login');
 
 });
 Route::prefix('location')->group(function(){
