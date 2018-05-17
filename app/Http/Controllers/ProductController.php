@@ -19,6 +19,6 @@ class ProductController extends Controller
         $pro->owner=$request->owner;
         $pro->level=$request->level;
         $pro->save();
-        return redirect(route('admin.users.view'));
+        return redirect(route('admin.products.view'));
     }
 }
