@@ -14,11 +14,14 @@ class ProductController extends Controller
 
     public function insert(Request $request){
         $pro=new Product();
-        $pro->name=$request->pro_name;
-        $pro->info=$request->info;
-        $pro->owner=$request->owner;
+        $pro->name=$request->name;
+        $pro->info=$request->Info;
+       
         $pro->level=$request->level;
+        $pro->status=1;
+        $pro->owner=$request->owner =="owner"?"Yes":"No";
+    
         $pro->save();
-        return redirect(route('admin.users.view'));
+        return redirect(route('admin.product.view'));
     }
 }
