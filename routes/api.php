@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Name;
 use App\Mom;
+use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -91,8 +92,9 @@ Route::prefix('auth')->group(function(){
     Route::post('/login',function(Request $req){
         $id = User::where('username',$req->username)->where('password',$req->password)->get();
 
-        session(['username'=>$id[0]['username']]);
-        return redirect(route('dashboard'));
+        // session(['username'=>$id[0]['username']]);
+        Session::put('uname','SB');
+     return  redirect(route('dashboard'));
     })->name('auth.login');
 
 });

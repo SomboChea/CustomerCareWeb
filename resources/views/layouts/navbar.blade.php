@@ -125,7 +125,7 @@
             <!-- item-->
             <div class="dropdown-item noti-title">
               <h5 class="text-overflow">
-                <small>Hello, {{ session('username') }}</small>
+                <small>Hello, {{ Session('name') }}</small>
               </h5>
             </div>
 
