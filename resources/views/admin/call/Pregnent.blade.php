@@ -12,15 +12,7 @@
        </tr>
    </thead>
    <tbody class="gridbody">    
-      <tr  id="nodata">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>No Data</td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>   
+  
    </tbody>
 
 </table>
