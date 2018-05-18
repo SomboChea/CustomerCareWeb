@@ -3,45 +3,43 @@
 @section('title', 'New Product')
 
 @section('block-content')
-
+<style>
+  .parsley-errors-list{
+    color:red;
+    list-style:none;  
+  }
+</style>
   <div class="card mb-12">
     <div class="card-header">
       <h3><i class="fa fa-check-square-o"></i> Create a new product</h3>
     </div>
     <div class="card-body">
-      <form id="myform" method="POST" action="{{asset('api/v1/user/news')}}" data-parsley-validate novalidate>
+      <form id="myform" method="POST" action="{{route('api.product.add')}}" data-parsley-validate novalidate>
         @method('POST')
         <div class="form-group">
           <label for="userName">Full Name :<span class="text-danger">*</span></label>
-          <input type="text" name="fullname" data-parsley-trigger="change" required placeholder="Enter Full name" class="form-control" id="fullname">
+          <input type="text" name="name" data-parsley-trigger="change" required placeholder="Enter name" class="form-control" id="fullname">
         </div>
         <div class="form-group">
-          <label for="userName">User Name<span class="text-danger">*</span></label>
-          <input type="text" name="username" data-parsley-uname="" required placeholder="Enter user name" class="form-control" id="userName">
+          <label for="userName">Info<span class="text-danger">*</span></label>
+          <textarea type="text" name="Info" data-parsley-uname="" rows=4 required placeholder="Info" class="form-control" id="userName"></textarea>
           <div class="errorBlock"></div>
         </div>
 
+        
         <div class="form-group">
-          <label for="pass1">Password<span class="text-danger">*</span></label>
-          <input id="pass1" name="password" type="password" placeholder="Password" required class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="passWord2">Confirm Password <span class="text-danger">*</span></label>
-          <input data-parsley-equalto="#pass1" type="password" required placeholder="Password" class="form-control" id="passWord2">
+          <label for="passWord2">Level <span class="text-danger">*</span></label>
+          <input  name="level" type="text" required placeholder="Level" class="form-control" id="passWord2">
 
         </div>
-
-
-        <div class="form-group ">
-          <label for="passWord2">Role<span class="text-danger">*</span></label>
-
-          <select name="role_id" class="form-control Role-select" require data-parsley-select="">
-                  <option selected="selected" value="0">    --Choose Role--</option>
-                  <option  value="1">User</option>
-                  <option value="2">Admin</option>
-                </select>
-          <div class="errorBlock"></div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="owner" checked name="owner" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Owner
+          </label>
         </div>
+
+        
 
         <div class="form-group text-right m-b-0">
           <button class="btn btn-primary" type="submit">
@@ -56,4 +54,9 @@
 
     </div>
   </div>
+
+  <script src="{{asset('js/parsley.js')}}"></script>
+  <script>
+    $("#myform").parsley();
+  </script>
 @endsection

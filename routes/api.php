@@ -145,10 +145,13 @@ Route::prefix('/product')->group(function(){
     Route::get('/',function(){
         return DB::select('select * from viewProduct');
     })->name('api.product');
+
+    Route::post('/add','ProductController@insert')->name('api.product.add');
 });
 
 Route::prefix('/customer')->group(function(){
     Route::get('/',function(){})->name('api.customer');
+
 
     Route::get('/mom',function(){
         return DB::select('select * from viewMom');
