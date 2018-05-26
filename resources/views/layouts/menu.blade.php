@@ -1,5 +1,5 @@
 <!-- Left Sidebar -->
-<div class="left main-sidebar">
+<div class="left main-sidebar" style="position:fixed;overflow:auto">
 
   <div class="sidebar-inner leftscroll">
 
