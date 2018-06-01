@@ -1,9 +1,14 @@
 
+{{-- @IncludeIf('components.stack.datatables') --}}
+
+
+
 @extends('layouts.content')
 
 @section('block-content')
+
 {{--  Modal start here  --}}
-<h2>Tabs</h2>
+<h2>All Mom</h2>
 <div class="bd-example bd-example-tabs">
   <nav class="nav nav-tabs" id="nav-tab" role="tablist">
     <a  style="width:33%;text-align:center" class="nav-item nav-link active" id="nav-preg-tab" data-toggle="tab" href="#nav-preg" role="tab" aria-controls="home" aria-expanded="true">Pregnent</a>
@@ -29,9 +34,9 @@
        </div>
        </div>
        
-       @yield('test')
+       {{-- @yield('test')
        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-       <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> --}}
        
        <script>    
            var hidden=["Mom_namge"];
@@ -105,9 +110,9 @@
                    </div>
                    </div>
                    
-                   @yield('test')
+                   {{-- @yield('test')
                    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-                   <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+                   <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> --}}
                    
                    <script>    
                         hidden=["Mom_namge"];
@@ -183,9 +188,9 @@
        </div>
        </div>
        
-       @yield('test')
+       {{-- @yield('test')
        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-       <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> --}}
        
        <script>    
             hidden=["Mom_namge"];
@@ -246,6 +251,8 @@
          </div>
   </div>
 </div>
+
+
 
 
 @endsection

@@ -8,6 +8,8 @@
 // require('../../../node_modules/jquery/dist/jquery');
 require('../../../node_modules/bootstrap/dist/js/bootstrap');
 
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
 // window.Vue = require('vue');
 
 // /**

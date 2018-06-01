@@ -28,6 +28,9 @@
         "jquery-ui": "^1.12.1",
         "moment": "^2.22.0",
         "node-sass": "^4.9.0",
-        "switchery": "0.0.2"
+        "switchery": "0.0.2",
+        "validate.js": "^0.12.0",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
     }
 }

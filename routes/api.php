@@ -32,10 +32,10 @@ Route::prefix('/call')->group(function(){
         return DB::Select('Select * from viewlastcall where Count=1');
     })->name('api.call.new');
     Route::get('/step',function(){
-        return DB::Select('Select * from viewlastcall where Count>1');
+        return DB::Select('Select * from viewlastcall where Count=1');
     })->name('api.call.step');
     Route::get('/pregnent',function(){
-        return DB::Select('select * from `viewlastcall` where `Kid_Name`="(Pregnent)"');
+        return DB::Select('select * from `viewlastcall` where `Kid_Name` = "(Pregnent)"');
     })->name('api.call.pregnent');
     Route::get("/table/pregent",function(){
 
@@ -117,7 +117,7 @@ Route::prefix('location')->group(function(){
 Route::prefix('/alert')->group(function(){
     Route::get('/', function() {
         //
-        return DB::table("viewAlert")->get();
+        return DB::table("viewalert")->get();
     })->name('api.alert');
 
     Route::get('/month/{duration}', function($duration) {

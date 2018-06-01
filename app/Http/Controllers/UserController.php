@@ -20,7 +20,7 @@ class UserController extends Controller
         $user->save();
         return redirect(route('admin.users.view'));
     }
- 
+
     public function update(Request $request, $id){
         $user=new User();
         $user->id=$id;
@@ -33,7 +33,7 @@ class UserController extends Controller
    }
 
     public function delete($id) {
-        $user= User::find($id);   
+        $user= User::find($id);
         $user->delete();
     }
 }
